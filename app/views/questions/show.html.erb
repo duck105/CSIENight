@@ -1,0 +1,26 @@
+<div class="title">
+	<br>
+	<h1><%= @question.title %></h1>
+</div>
+<br><br>
+<div class = "date">
+	posted <%= time_ago_in_words(@question.created_at) %> ago
+
+</div>
+<br><br>
+<div class="body">
+	<h2><%= @question.spec %></h2>
+</div>	
+<br><br>
+
+<div>
+	<h2>答案是 :<%= @question.answer %></h2>
+</div>
+
+<div>
+	<h2>答對得 :<%= @question.rewardpoint %></h2>
+	<h2>答錯得 :<%= @question.punishpoint %></h2>
+</div>
+
+
+<%= link_to "回題目",root_path %>

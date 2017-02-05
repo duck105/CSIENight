@@ -9,6 +9,32 @@
   </head>
 
   <body>
-    <%= yield %>
+  	<div id="main_content">
+			<div class="sidebar">
+				<ul>
+					<li class="category">WEBSITE</li>
+					<li><%= link_to "Question", root_path %></li>
+				</ul>
+				<ul>
+					<li class="category">SOCIAL</li>
+					<li><a href="https://facebook.com.tw">Facebook</a></li>
+					<li><a href="https://google.com.tw">Google</a></li>
+				</ul>
+				<ul>
+					<li><%= link_to "NewQuestion",new_question_path %></li>
+				</ul>
+
+			
+				
+			</div>
+
+
+				
+				<% flash.each do |name,msg|%>
+					<div class = "alert"><%= msg %></div>
+				<% end %>
+		
+	    <%= yield %>
+	  </div>
   </body>
 </html>
