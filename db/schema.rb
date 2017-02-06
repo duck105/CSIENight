@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170205150732) do
+ActiveRecord::Schema.define(version: 20170205181106) do
 
   create_table "questions", force: :cascade do |t|
     t.datetime "created_at",  null: false
@@ -20,6 +20,14 @@ ActiveRecord::Schema.define(version: 20170205150732) do
     t.string   "answer"
     t.integer  "rewardpoint"
     t.integer  "punishpoint"
+  end
+
+  create_table "submissions", force: :cascade do |t|
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "answer"
+    t.integer  "question_id"
+    t.index ["question_id"], name: "index_submissions_on_question_id"
   end
 
 end

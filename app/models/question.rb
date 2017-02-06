@@ -4,4 +4,10 @@ class Question < ApplicationRecord
 	validates :answer, presence: :true
 	validates :rewardpoint, presence: :true
 	validates :punishpoint, presence: :true
+
+	has_many :submissions, dependent: :destroy
+
+	def correct?(solution)
+		solution == answer
+	end
 end
