@@ -9,7 +9,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # POST /resource
   def create
-    ScoreToZero(resource)
+    super do |resource|
+      resource.score_to_zero
+    end 
   end
 
   # GET /resource/edit

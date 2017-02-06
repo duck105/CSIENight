@@ -3,8 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-
- 	validates :score, presence: :true      
+      
   has_many :submissions, dependent: :destroy
 
   def give_reward(reward)
@@ -20,5 +19,8 @@ class User < ApplicationRecord
   		self.score = 0
   	end
   	self.save
+  end
+  def score_to_zero
+  	self.score = 0
   end
 end
