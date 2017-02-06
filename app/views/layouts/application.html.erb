@@ -12,13 +12,27 @@
   	<div id="main_content">
 			<div class="sidebar">
 				<ul>
-					<li class="category">WEBSITE</li>
+					<li class="category">Question</li>
 					<li><%= link_to "Question", root_path %></li>
 				</ul>
 				<ul>
-					<li class="category">SOCIAL</li>
-					<li><a href="https://facebook.com.tw">Facebook</a></li>
-					<li><a href="https://google.com.tw">Google</a></li>
+					<li class="category">User</li>
+					<li>
+						<% if user_signed_in? %>
+                <%= link_to "會員登出", destroy_user_session_path, :method => :delete ,:class => "header_navlink w-nav-link"%>
+              <% else %>
+                <%= link_to "會員登入", new_session_path(:user), :class => "header_navlink w-nav-link" %>
+              <% end %>
+					</li>
+					<li>
+						<% if user_signed_in? %>
+                <%= link_to "會員資料" , edit_user_registration_path, :class => "header_navlink w-nav-link" %>
+              <% else %>
+                <%= link_to "會員註冊", new_user_registration_path, :class => "header_navlink w-nav-link"%>
+              <% end %>
+					</li>
+					<li><% if user_signed_in? %><%= current_user.score %><%end%></li>
+					
 				</ul>
 				<ul>
 					<li><%= link_to "NewQuestion",new_question_path %></li>

@@ -8,9 +8,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # POST /resource
-  # def create
-  #   super
-  # end
+  def create
+    ScoreToZero(resource)
+  end
 
   # GET /resource/edit
   # def edit
@@ -57,4 +57,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # def after_inactive_sign_up_path_for(resource)
   #   super(resource)
   # end
+
+  protected
+
+  def update_resource(resource, params)
+    params.delete :current_password
+    resource.update_without_password(params)
+  end
 end
