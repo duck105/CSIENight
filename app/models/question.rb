@@ -6,7 +6,7 @@ class Question < ApplicationRecord
 	validates :punishpoint, presence: :true
 
 	has_many :submissions, dependent: :destroy
-	has_many :judgesm, dependent: :destroy
+	has_many :judges, dependent: :destroy
 
 	def correct?(solution)
 		solution == answer
