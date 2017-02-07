@@ -26,5 +26,5 @@
 <div class = "comments">
 	<%= render 'submissions/form' %>
 </div>
-
+<%= link_to "Delete", question_path(@question) ,:method=> :delete, data: {confirm: "Are you sure?"}  %>
 <%= link_to "回題目",root_path %>

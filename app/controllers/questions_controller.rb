@@ -21,7 +21,7 @@ class QuestionsController < ApplicationController
 		@question.destroy
 
 		redirect_to root_path
-		flash[:alert] = "post was successfully destroyed"
+		flash[:alert] = "Question was successfully destroyed"
 	end
 
 
