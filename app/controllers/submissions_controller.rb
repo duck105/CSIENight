@@ -8,7 +8,7 @@ class SubmissionsController < ApplicationController
 
 		if @question.correct?(@submission.answer)
 			if @judge.nil?
-				@judge = Judge.create
+				@judge = Judge.new
 				@judge.init(@question.id, @user.id,0)
 			end
 			if @judge.solve_problem?
