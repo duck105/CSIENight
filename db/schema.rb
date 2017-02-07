@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170207072309) do
+ActiveRecord::Schema.define(version: 20170207154527) do
 
   create_table "judges", force: :cascade do |t|
     t.integer  "state"
@@ -20,6 +20,14 @@ ActiveRecord::Schema.define(version: 20170207072309) do
     t.integer  "question_id"
     t.index ["question_id"], name: "index_judges_on_question_id"
     t.index ["user_id"], name: "index_judges_on_user_id"
+  end
+
+  create_table "options", force: :cascade do |t|
+    t.text     "body"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "question_id"
+    t.index ["question_id"], name: "index_options_on_question_id"
   end
 
   create_table "questions", force: :cascade do |t|
