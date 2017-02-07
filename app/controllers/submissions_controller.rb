@@ -6,10 +6,11 @@ class SubmissionsController < ApplicationController
 		@score = current_user.score
 		@judge = Judge.where("question_id = ? AND user_id = ?", params[:question_id], @user.id).take
 
-		@judge.empty?(@question.id, @user.id)
-			
-
 		if @question.correct?(@submission.answer)
+			if @judge.nil?
+				@judge = Judge.create
+				@judge.init(@question.id, @user.id,0)
+			end
 			if @judge.solve_problem?
 				flash[:notice] = "Accept!!But you have already answered it"
 				redirect_to root_path
@@ -21,6 +22,10 @@ class SubmissionsController < ApplicationController
 			end
 			
 		else
+			if @judge.nil?
+				@judge = Judge.create
+				@judge.init(@question.id, @user.id,0)
+			end
 			if @judge.solve_problem?
 				flash[:notice] = "Wrong answer!!But you have already answered"
 				redirect_to root_path
