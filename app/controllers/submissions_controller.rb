@@ -19,7 +19,7 @@ class SubmissionsController < ApplicationController
 				@user.give_reward(@question.rewardpoint.to_i)
 				@judge.update(1)
 				flash[:notice] = "Accept!!"
-				redirect_to root_path
+				redirect_to category_path(@category)
 			end
 			
 		else
@@ -29,11 +29,11 @@ class SubmissionsController < ApplicationController
 			end
 			if @judge.solve_problem?
 				flash[:notice] = "Wrong answer!!But you have already answered"
-				redirect_to root_path
+				redirect_to category_path(@category)
 			else
 				@user.give_punish(@question.punishpoint.to_i) 
 				@judge.update(2)
-				redirect_to root_path
+				redirect_to category_path(@category)
 				flash[:alert] = "Wrong answer!!"
 			end
 		end 

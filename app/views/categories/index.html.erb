@@ -2,7 +2,6 @@
 	<% @categories.each do |c| %>
 		<div class="post_wrap">
 		<h2 class="title"><%= link_to c.name, category_path(c)%></h2>
-		<div class="date"><%= c.created_at.strftime("%B, %d, %Y") %>
 	</div>
 	<% end %>
 </div>

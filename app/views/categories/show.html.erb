@@ -3,10 +3,7 @@
 	<h1><%= @category.name %></h1>
 </div>
 <br><br>
-<div class = "date">
-	posted <%= time_ago_in_words(@category.created_at) %> ago
 
-</div>
 <br><br>
 <h3>
 	There are <%= @category.questions.count %> questions
