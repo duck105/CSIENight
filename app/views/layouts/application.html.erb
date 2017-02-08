@@ -19,16 +19,17 @@
 					<li class="category">User</li>
 					<li>
 						<% if user_signed_in? %>
-                <%= link_to "會員登出", destroy_user_session_path, :method => :delete ,:class => "header_navlink w-nav-link"%>
+                <%= link_to "會員登出", destroy_user_session_path, :method => :delete %>
               <% else %>
-                <%= link_to "會員登入", new_session_path(:user), :class => "header_navlink w-nav-link" %>
+                <%= link_to "會員登入", new_session_path(:user) %>
+                <%= link_to "Facebook 快速登入", user_facebook_omniauth_authorize_path %>
               <% end %>
 					</li>
 					<li>
 						<% if user_signed_in? %>
-                <%= link_to "會員資料" , edit_user_registration_path, :class => "header_navlink w-nav-link" %>
+                <%= link_to "會員資料" , edit_user_registration_path %>
               <% else %>
-                <%= link_to "會員註冊", new_user_registration_path, :class => "header_navlink w-nav-link"%>
+                <%= link_to "會員註冊", new_user_registration_path %>
               <% end %>
 					</li>
 					<li><% if user_signed_in? %><%= current_user.score %><%end%></li>
