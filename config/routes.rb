@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   	resources :options
   end	
   
-
+  get 'rank/index'
 
   root "questions#index"
 

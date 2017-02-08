@@ -33,18 +33,15 @@
               <% end %>
 					</li>
 					<li><% if user_signed_in? %><%= current_user.score %><%end%></li>
-					
 				</ul>
 				<ul>
 					<li><%= link_to "NewQuestion",new_question_path %></li>
 				</ul>
-
-			
-				
+				<ul>
+					<li><%= link_to "Rank",rank_index_path %></li>
+				</ul>
 			</div>
 
-
-				
 				<% flash.each do |name,msg|%>
 					<div class = "alert"><%= msg %></div>
 				<% end %>
