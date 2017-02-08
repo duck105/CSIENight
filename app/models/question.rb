@@ -7,7 +7,7 @@ class Question < ApplicationRecord
 
 	has_many :submissions, dependent: :destroy
 	has_many :judges, dependent: :destroy
-	has_many :optins, dependent: :destroy
+	has_many :options, dependent: :destroy
 
 	def correct?(solution)
 		solution == answer

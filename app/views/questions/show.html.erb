@@ -11,11 +11,15 @@
 <div class="body">
 	<h2><%= @question.spec %></h2>
 </div>	
-<br><br>
 
-<div>
-	<h2>答案是 :<%= @question.answer %></h2>
-</div>
+<h2>
+	There are <%= @question.options.count %> options
+</h2>
+<br>
+<% @question.options.each do |option|%>
+	<h2><%= option.body %></h2>
+<% end %>
+	
 
 <div>
 	<h2>答對得 :<%= @question.rewardpoint %></h2>
@@ -26,5 +30,4 @@
 <div class = "comments">
 	<%= render 'submissions/form' %>
 </div>
-<%= link_to "Delete", question_path(@question) ,:method=> :delete, data: {confirm: "Are you sure?"}  %>
 <%= link_to "回題目",root_path %>
