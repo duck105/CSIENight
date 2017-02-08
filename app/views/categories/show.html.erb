@@ -1,0 +1,19 @@
+<div class="title">
+	<br>
+	<h1><%= @category.name %></h1>
+</div>
+<br><br>
+<div class = "date">
+	posted <%= time_ago_in_words(@category.created_at) %> ago
+
+</div>
+<br><br>
+<h3>
+	There are <%= @category.questions.count %> questions
+</h3>
+
+<% @category.questions.each do |question|%>
+	<h2><%= link_to question.title, question_path(question) %></h2>
+<% end %>
+<br>
+<%= link_to "回題目",root_path %>

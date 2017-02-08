@@ -5,9 +5,10 @@ Rails.application.routes.draw do
   	resources :submissions
   	resources :options
   end	
+  resources :categories
   
   get 'rank/index'
 
-  root "questions#index"
+  root "categories#index"
 
 end
