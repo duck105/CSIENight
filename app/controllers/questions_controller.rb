@@ -27,7 +27,7 @@ class QuestionsController < ApplicationController
 
 	private
 	def question_params
-		params.require(:question).permit(:title, :spec, :answer, :rewardpoint, :punishpoint)
+		params.require(:question).permit(:title, :spec, :answer, :rewardpoint, :punishpoint, :category_id)
 	end
 
 end

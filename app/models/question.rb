@@ -8,6 +8,7 @@ class Question < ApplicationRecord
 	has_many :submissions, dependent: :destroy
 	has_many :judges, dependent: :destroy
 	has_many :options, dependent: :destroy
+	belongs_to :category, foreign_key: :category_id
 
 	def correct?(solution)
 		solution == answer
