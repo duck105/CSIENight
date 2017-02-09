@@ -1,0 +1,9 @@
+<div id = "posts">
+	<% @infors.each do |infor| %>
+ 		<div class="post_wrap">
+ 		<h2 class="title"><%= infor.title %></h2>
+ 		<div class="date"><%= infor.created_at.strftime("%B, %d, %Y") %>
+ 		<h3 ><%= infor.body %></h2>
+ 	</div>
+ 	<% end %>
+</div>

@@ -6,9 +6,10 @@ Rails.application.routes.draw do
   	resources :options
   end	
   resources :categories
+  resources :infors
   
   get 'rank/index'
 
-  root "categories#index"
+  root "infors#index"
 
 end
