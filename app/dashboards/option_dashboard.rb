@@ -24,7 +24,6 @@ class OptionDashboard < Administrate::BaseDashboard
     :question,
     :id,
     :body,
-    :created_at,
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES

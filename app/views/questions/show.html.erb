@@ -19,8 +19,6 @@
 <% @question.options.each do |option|%>
 	<h2><%= option.body %></h2>
 <% end %>
-
-<h2>category為: <%= @question.category_id %></h2>
 	
 <div>
 	<h2>答對得 :<%= @question.rewardpoint %></h2>
