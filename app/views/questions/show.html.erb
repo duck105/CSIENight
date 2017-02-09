@@ -26,9 +26,12 @@
 	<h2>答對得 :<%= @question.rewardpoint %></h2>
 	<h2>答錯得 :<%= @question.punishpoint %></h2>
 </div>
-
-
-<div class = "comments">
-	<%= render 'submissions/form' %>
-</div>
+	
+<% if user_signed_in? %>
+	<div class = "comments">
+		<%= render 'submissions/form' %>
+	</div>
+<% elsif %>
+	<h3>請登入才能回答問題喔</h3>
+<% end %>
 <%= link_to "回題目",root_path %>

@@ -1,4 +1,5 @@
 class SubmissionsController < ApplicationController
+	before_action :authenticate_user!
 	def create
 		@question = Question.find(params[:question_id])
 		@submission = @question.submissions.create(submission_params)
