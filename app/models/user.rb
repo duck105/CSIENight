@@ -32,9 +32,5 @@ class User < ApplicationRecord
   	end
   	self.save
   end
-  def score_to_zero
-  	self.score = 0
-  end
-
 
 end
