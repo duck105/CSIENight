@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
   namespace :admin do
-    resources :users
+    resources :infors
 		resources :categories
-		resources :infors
-		resources :options
 		resources :questions
+		resources :options
+    resources :users
     resources :submissions
+    resources :judges
     root to: "users#index"
   end
 
