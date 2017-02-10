@@ -1,6 +1,6 @@
 require "administrate/base_dashboard"
 
-class QuestionDashboard < Administrate::BaseDashboard
+class SubmissionDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
   # a hash that describes the type of each of the model's fields.
   #
@@ -8,19 +8,12 @@ class QuestionDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
-    submissions: Field::HasMany,
-    judges: Field::HasMany,
-    options: Field::HasMany,
-    category: Field::BelongsTo,
+    question: Field::BelongsTo,
+    user: Field::BelongsTo,
     id: Field::Number,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
-    title: Field::String,
-    spec: Field::Text,
     answer: Field::String,
-    rewardpoint: Field::Number,
-    punishpoint: Field::Number,
-    image: QuestionImageField,
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -29,47 +22,36 @@ class QuestionDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
-    :title,
-    :submissions,
-    :options,
-    :category,
-    :image
+    :question,
+    :user,
+    :id,
+    :created_at,
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = [
-    :submissions,
-    :options,
-    :category,
+    :question,
+    :user,
     :id,
-    :title,
-    :spec,
-    :answer,
-    :rewardpoint,
-    :punishpoint,
     :created_at,
     :updated_at,
-    :image
+    :answer,
   ].freeze
 
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
-    :category,
-    :title,
-    :spec,
+    :question,
+    :user,
     :answer,
-    :rewardpoint,
-    :punishpoint,
-    :image
   ].freeze
 
-  # Overwrite this method to customize how questions are displayed
+  # Overwrite this method to customize how submissions are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(question)
-  #   "Question ##{question.id}"
+  # def display_resource(submission)
+  #   "Submission ##{submission.id}"
   # end
 end

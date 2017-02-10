@@ -12,6 +12,8 @@
 	<h2><%= @question.spec %></h2>
 </div>	
 
+<div class = "photo"><%= image_tag(@question.image_url.to_s) %></div>
+
 <h2>
 	There are <%= @question.options.count %> options
 </h2>

@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 		resources :infors
 		resources :options
 		resources :questions
-
+    resources :submissions
     root to: "users#index"
   end
 

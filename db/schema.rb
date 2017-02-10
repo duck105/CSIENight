@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170209054508) do
+ActiveRecord::Schema.define(version: 20170210161642) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -59,6 +59,7 @@ ActiveRecord::Schema.define(version: 20170209054508) do
     t.integer  "rewardpoint"
     t.integer  "punishpoint"
     t.integer  "category_id"
+    t.string   "image"
     t.index ["category_id"], name: "index_questions_on_category_id"
   end
 
@@ -85,7 +86,7 @@ ActiveRecord::Schema.define(version: 20170209054508) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
-    t.integer  "score"
+    t.integer  "score",                  default: 0
     t.string   "provider"
     t.string   "uid"
     t.index ["email"], name: "index_users_on_email", unique: true
