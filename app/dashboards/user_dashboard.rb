@@ -26,6 +26,7 @@ class UserDashboard < Administrate::BaseDashboard
     score: Field::Number,
     provider: Field::String,
     uid: Field::String,
+    is_admin: Field::Boolean
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -43,6 +44,7 @@ class UserDashboard < Administrate::BaseDashboard
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = [
+    :is_admin,
     :id,
     :email,
     :sign_in_count,
