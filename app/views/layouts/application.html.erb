@@ -12,6 +12,10 @@
   	<div id="main_content">
 			<div class="sidebar">
 				<ul>
+					<li class="category">Home</li>
+					<li><%= link_to "Latest News", root_path %></li>
+				</ul>
+				<ul>
 					<li class="category">Category</li>
 					<li><%= link_to "Category", categories_path %></li>
 				</ul>
@@ -33,9 +37,6 @@
               <% end %>
 					</li>
 					<li><% if user_signed_in? %><%= current_user.score %><%end%></li>
-				</ul>
-				<ul>
-					<li><%= link_to "NewQuestion",new_question_path %></li>
 				</ul>
 				<ul>
 					<li><%= link_to "Rank",rank_index_path %></li>

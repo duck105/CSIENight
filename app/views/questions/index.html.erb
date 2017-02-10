@@ -3,8 +3,6 @@
 		<div class="post_wrap">
 		<h2 class="title"><%= link_to q.title, question_path(q)%></h2>
 		<div class="date"><%= q.created_at.strftime("%B, %d, %Y") %>
-		<%= link_to "Edit", edit_question_path(q) %>
-		<%= link_to "Delete", question_path(q) ,:method=> :delete, data: {confirm: "Are you sure?"}  %>
 	</div>
 	<% end %>
 </div>
