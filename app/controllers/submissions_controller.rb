@@ -2,8 +2,10 @@ class SubmissionsController < ApplicationController
 	before_action :authenticate_user!
 	def create
 		@question = Question.find(params[:question_id])
-		@submission = @question.submissions.create(submission_params)
+		@submission = Submission.new(submission_params)
 		@user = current_user
+		@submission.user = @user
+		@submission.question = @question
 		@score = current_user.score
 		@judge = Judge.where("question_id = ? AND user_id = ?", params[:question_id], @user.id).take
 		@category = Category.find(@question.category_id)
@@ -38,6 +40,7 @@ class SubmissionsController < ApplicationController
 				flash[:alert] = "Wrong answer!!"
 			end
 		end 
+		@submission.save
 	end
 
 
