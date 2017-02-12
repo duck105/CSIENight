@@ -30,7 +30,7 @@ class QuestionDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
     :title,
-    :submissions,
+    :id,
     :options,
     :category,
     :image

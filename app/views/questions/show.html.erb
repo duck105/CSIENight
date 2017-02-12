@@ -28,10 +28,14 @@
 </div>
 	
 <% if user_signed_in? %>
-	<div class = "comments">
+	<% if @question.options.count != 0%>
+		<%= render "submissions/choice" %>
+	<% elsif @question.spec.empty? %>
+		<%= render "submissions/yesno" %>
+	<% else %>
 		<%= render 'submissions/form' %>
-	</div>
+	<% end %>
 <% elsif %>
 	<h3>請登入才能回答問題喔</h3>
 <% end %>
-<%= link_to "回題目",root_path %>
+<%= link_to "Back to Category",@category_path %>

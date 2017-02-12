@@ -1,0 +1,12 @@
+<%= form_for([@question, @question.submissions.new]) do |f| %>
+	<br>
+	
+	<% (1..@question.options.count).to_a.each do |i|  %>
+		<%= f.label :answer, i %> 
+		<%= f.radio_button :answer, i %>
+	<% end %>
+	<br>
+	<div>
+		<%= f.submit %>
+	</div>
+<% end %>
