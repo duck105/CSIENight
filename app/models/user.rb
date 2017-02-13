@@ -33,4 +33,13 @@ class User < ApplicationRecord
   	end
   	self.save
   end
+
+  def count_rank
+    users = User.order(:score => :desc, :name => :asc)
+    users.each_with_index do |u, i|
+      if u.name == self.name or u.email == self.email
+        return (i+1)
+      end
+    end
+  end
 end

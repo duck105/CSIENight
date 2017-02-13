@@ -10,7 +10,12 @@
 </h3>
 
 <% @category.questions.each do |question|%>
-	<h2><%= link_to question.title, question_path(question) %></h2>
+	<% if new_or_not(question) <= 3 %>
+		<%= content_tag(:h2, class: "new") do %><%= link_to question.title, question_path(question) %>
+		<% end %>
+	<% else %>
+		<h2 ><%= link_to question.title, question_path(question) %></h2>
+	<% end %>
 <% end %>
 <br>
 <%= link_to "Back to Problem Set",categories_path %>
