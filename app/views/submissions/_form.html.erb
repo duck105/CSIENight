@@ -1,12 +1,11 @@
 <%= form_for([@question, @question.submissions.new]) do |f| %>
-	<br>
-
-	<div>
-		<%= f.label :answer, "答案" %> <br>
-		<%= f.text_area :answer %>
-	</div>
-	<br>
-	<div>
-		<%= f.submit %>
-	</div>
+  <br>
+  <div>
+    <%= f.label :answer, "答案" %> <br>
+    <%= f.text_area :answer %>
+  </div>
+  <br>
+  <div>
+    <%= f.submit %>
+  </div>
 <% end %>

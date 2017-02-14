@@ -1,53 +1,53 @@
 <%= form_for @question do |f|%>
 
-	<% if @question.errors.any? %>
-		<div id="errors">
-			<h2><%= pluralize(@question.errors.count, "error") %>｜ prohibited this post from save</h2>
-			<ul>
-				<% @question.errors.full_messages.each do |msg| %>
-				<li><%= msg %></li>
-				<% end %>
-			</ul>
-		</div>
-	<% end %>
+  <% if @question.errors.any? %>
+    <div id="errors">
+      <h2><%= pluralize(@question.errors.count, "error") %>｜ prohibited this post from save</h2>
+      <ul>
+        <% @question.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
 
 
 
-	<div>
-		<%= f.label :title, "標題"%><br>
-		<%= f.text_field :title%>
-	</div>
-	<br>
-	<div>
-		<%= f.label :spec, "題目敘述"%><br>
-		<%= f.text_area :spec%>
-	</div>
-	<br>
-	<div>
-		<%= f.label :answer, "答案" %> <br>
-		<%= f.text_field :answer %>
-	</div>
-	<br>
-	<div>
-		<%= f.label :rewardpoint, "獎勵分數" %>
-		<%= f.number_field :rewardpoint %>	
-	</div>
-	<br>
-	<div>
-		<%= f.label :punishpoint, "處罰分數" %>
-		<%= f.number_field :punishpoint %>
-	</div>
-	<br>
-	<div>
-		<%= f.label :category_id, "類別為" %>
-		<%= f.number_field :category_id %>
-	</div>
-	<br>
-	<div id = "button">
-		<%= f.submit "送出"%>
-	</div>
-	<div id = "button">
-		<%= link_to "取消", questions_path %>
-	</div>
-	
+  <div>
+    <%= f.label :title, "標題"%><br>
+    <%= f.text_field :title%>
+  </div>
+  <br>
+  <div>
+    <%= f.label :spec, "題目敘述"%><br>
+    <%= f.text_area :spec%>
+  </div>
+  <br>
+  <div>
+    <%= f.label :answer, "答案" %> <br>
+    <%= f.text_field :answer %>
+  </div>
+  <br>
+  <div>
+    <%= f.label :rewardpoint, "獎勵分數" %>
+    <%= f.number_field :rewardpoint %>  
+  </div>
+  <br>
+  <div>
+    <%= f.label :punishpoint, "處罰分數" %>
+    <%= f.number_field :punishpoint %>
+  </div>
+  <br>
+  <div>
+    <%= f.label :category_id, "類別為" %>
+    <%= f.number_field :category_id %>
+  </div>
+  <br>
+  <div id = "button">
+    <%= f.submit "送出"%>
+  </div>
+  <div id = "button">
+    <%= link_to "取消", questions_path %>
+  </div>
+  
 <% end %> 

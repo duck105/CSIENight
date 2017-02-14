@@ -1,21 +1,21 @@
 <div class="title">
-	<br>
-	<h1><%= @category.name %></h1>
+  <br>
+  <h1><%= @category.name %></h1>
 </div>
 <br><br>
 
 <br><br>
 <h3>
-	There are <%= @category.questions.count %> questions
+  There are <%= @category.questions.count %> questions
 </h3>
 
 <% @category.questions.each do |question|%>
-	<% if new_or_not(question) <= 3 %>
-		<%= content_tag(:h2, class: "new") do %><%= link_to question.title, question_path(question) %>
-		<% end %>
-	<% else %>
-		<h2 ><%= link_to question.title, question_path(question) %></h2>
-	<% end %>
+  <% if new_or_not(question) <= 3 %>
+    <%= content_tag(:h2, class: "new") do %><%= link_to question.title, question_path(question) %>
+    <% end %>
+  <% else %>
+    <h2 ><%= link_to question.title, question_path(question) %></h2>
+  <% end %>
 <% end %>
 <br>
 <%= link_to "Back to Problem Set",categories_path %>

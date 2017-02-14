@@ -1,9 +1,9 @@
 <div id = "posts">
-	<% @categories.each do |c| %>
-		<div class="post_wrap">
-		<h2 class="title"><%= link_to c.name, category_path(c)%></h2>
-	</div>
-	<% end %>
+  <% @categories.each do |c| %>
+    <div class="post_wrap">
+    <h2 class="title"><%= link_to c.name, category_path(c)%></h2>
+  </div>
+  <% end %>
 </div>
 
 <br><br>

@@ -15,125 +15,125 @@
  */
 
 #posts{
-	position: absolute;
-	width: 70%;
+  position: absolute;
+  width: 70%;
 }
 .post_wrap{
-	top: 500px;
+  top: 500px;
 
 }
 .sidebar{
-	position: fixed;
-	background-color: #fafafa;
-	left:0%;
-	top: 0%;
-	width: 14%;
-	height: 100%;
-	padding: 7em 0 0 0;
+  position: fixed;
+  background-color: #fafafa;
+  left:0%;
+  top: 0%;
+  width: 14%;
+  height: 100%;
+  padding: 7em 0 0 0;
 }
 .icon{
-	width: 150px;
-	position: absolute;
-	left: 13%;
-	top: 5%
+  width: 150px;
+  position: absolute;
+  left: 13%;
+  top: 5%
 }
 ul{
-	position: relative;
-	list-style-type: none;
-	text-align: right;
-	padding-right: 3em;
+  position: relative;
+  list-style-type: none;
+  text-align: right;
+  padding-right: 3em;
 }
 ul .category{
-	font-size: 18px;
-	color:#33acb7;
+  font-size: 18px;
+  color:#33acb7;
 }
 li{
 
-	padding: 0.5em;
+  padding: 0.5em;
 }
 li a{
-	color:#9eafba;
-	text-decoration: none;
+  color:#9eafba;
+  text-decoration: none;
 }
 li a:hover{
-	
-	color:#33acb7;
-	-webkit-transition: 0.3s linear;
+  
+  color:#33acb7;
+  -webkit-transition: 0.3s linear;
 }
 li .active a{
-	color: #33acb7;
+  color: #33acb7;
 }
 
 .log_in{
-	position: absolute;
-	right:3em;
-	top: 70%;
-	font-size: 18px;
-	color: #9eafba
+  position: absolute;
+  right:3em;
+  top: 70%;
+  font-size: 18px;
+  color: #9eafba
 }
 #main{
-	position: absolute;
-	top:0%;
-	width: 85%;
-	height: 10%;
-	left: 14%;
-	background-color: #fafafa;
-	padding: 15px
+  position: absolute;
+  top:0%;
+  width: 85%;
+  height: 10%;
+  left: 14%;
+  background-color: #fafafa;
+  padding: 15px
 }
 .title {
- 	font-weight: 500;
- 	text-decoration: none;
- 	color: #2a2f35;
- 	font-size: 2.0em;
- 	margin-bottom: 0;
+  font-weight: 500;
+  text-decoration: none;
+  color: #2a2f35;
+  font-size: 2.0em;
+  margin-bottom: 0;
 }
 .user_name{
-	position: absolute;
-	right:2em;
-	width: 80%;
-	top: 65%
+  position: absolute;
+  right:2em;
+  width: 80%;
+  top: 65%
 
 }
 .pagination{
-	position: absolute;
-	left: 50%;
-	top: 80%;
-	height: 40px;
-	width: 200px;
+  position: absolute;
+  left: 50%;
+  top: 80%;
+  height: 40px;
+  width: 200px;
 }
 #header{
-	font-size: 50px;
-	width: 50%;
+  font-size: 50px;
+  width: 50%;
 }
 
 #main_content{
-	margin-left: 250px;
+  margin-left: 250px;
 }
 .buttons{
 
-	width: 50%;
+  width: 50%;
 }
 a:link{
-	text-decoration: none;
-	color: black;
+  text-decoration: none;
+  color: black;
 }
 a:visited{
-	text-decoration: none;
-	color: black;
+  text-decoration: none;
+  color: black;
 }
 a:hover{
-	text-decoration: none;
-	color: gray;
-	-webkit-transition: 0.3s linear;
+  text-decoration: none;
+  color: gray;
+  -webkit-transition: 0.3s linear;
 }
 a:active{
-	text-decoration: none;
-	color: black;
+  text-decoration: none;
+  color: black;
 }
 
 .jizz1{
-	color: blue
+  color: blue
 }
 .jizz0{
-	color: red
+  color: red
 }
