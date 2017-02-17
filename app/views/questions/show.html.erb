@@ -1,41 +1,49 @@
-<div class="title">
-  <br>
-  <h1><%= @question.title %></h1>
-</div>
-<br><br>
-<div class = "date">
-  posted <%= time_ago_in_words(@question.created_at) %> ago
+<div id="main">
+   <div class="header" >
+    <h1>Problem</h1>
+    <% flash.each do |name,msg|%>
+      <h2><%= msg %></h2>
+    <% end %>
+   </div>
+   <div class="content">
+    <p class="content-emphasize"><%= @question.title %></p>
+    
+    <div class="problem_description">
+      <div class="img-align-right">
+        <%= image_tag(@question.image_url.to_s) %>
+      </div>
+      <h2 class="content-subhead">Problem Description</h2>
+      <p>
+        <%= @question.spec %>
+      </p>
+    </div>
 
-</div>
-<br><br>
-<div class="body">
-  <h2><%= @question.spec %></h2>
-</div>  
+    <% @question.options.each do |option|%>
+      <p><%= option.body %></p>
+    <% end %>
 
-<div class = "photo"><%= image_tag(@question.image_url.to_s) %></div>
+    <div class="problem-score">
+      <h2 class="content-subhead">Problem Score</h2>
+      <p class="problem-score-correct">Correct : + <%= @question.rewardpoint %> pts</p>
+      <p class="problem-score-incorrect">Incorrect : <%= @question.punishpoint %> pts</p>
+    </div>
+    
+    <% if user_signed_in? %>
+      <h2 class="content-subhead">Fill in Your Answer :</h2>
+      <% if @question.options.count != 0%>
+        <%= render "submissions/choice" %>
+        <br>
+      <% elsif @question.spec.empty? %>
+        <%= render "submissions/yesno" %>
+      <% else %>
+        <%= render 'submissions/form' %>
+      <% end %>
+    <% elsif %>
+      <h2 class="content-subhead">Please Sign in to Answer it!!</h2>
+    <% end %>
 
-<h2>
-  There are <%= @question.options.count %> options
-</h2>
-<br>
-<% @question.options.each do |option|%>
-  <h2><%= option.body %></h2>
-<% end %>
-  
-<div>
-  <h2>答對得 :<%= @question.rewardpoint %></h2>
-  <h2>答錯得 :<%= @question.punishpoint %></h2>
+    <%= link_to "Set Menu",category_path(@question.category) , :class => "submit-button" %>
 </div>
-  
-<% if user_signed_in? %>
-  <% if @question.options.count != 0%>
-    <%= render "submissions/choice" %>
-  <% elsif @question.spec.empty? %>
-    <%= render "submissions/yesno" %>
-  <% else %>
-    <%= render 'submissions/form' %>
-  <% end %>
-<% elsif %>
-  <h3>請登入才能回答問題喔</h3>
-<% end %>
-<%= link_to "Back to Category",@category_path %>
+
+
+

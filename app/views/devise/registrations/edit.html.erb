@@ -1,19 +1,16 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<div id="main">
+  <div class="header">
+    <h1>User</h1>
+    <h2><%= current_user.name.to_s.humanize %><h2>
+  </div>
 
-<div class="field">
-  <h3>您目前的分數為 : <%= current_user.score %></h3>
+  <div class="content">
+    <div class="ul" >
+      <ul class="profile">          
+        <li class="infor">Your Score: <%= current_user.score %></li>
+        <li class="infor">Your Rank: <%= @ranknumber %></li>
+        <li class="infor">Accept Counter: <%= @number %></li>
+      </ul>
+    </div>
+  </div>
 </div>
-<br>
-<div class="field">
-  <h3>您目前的排行為 : <%= @ranknumber %>  </h3>
-</div>
-<br>
-<div class="field">
-  <h3>您目前的AC數為 : <%= @number %>  </h3>
-</div>
-
-<h3>Cancel my account</h3>
-
-<%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-<%= link_to "Back", :back %>

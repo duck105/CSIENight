@@ -1,5 +1,23 @@
-<% @users.each_with_index do |user , i| %>
-  <%= content_tag(:h2, class: "jizz#{i%2}") do %><%= user.name %>得了 <%= user.score %>   <% end %>
-
-
-<% end %>
+<div class="header">
+  <h1>Rank</h1>
+  <h2>Top 20</h2>
+  <% flash.each do |name,msg|%>
+    <h2><%= msg %></h2>
+  <% end %>
+</div>
+<div class="content">
+  <table border="1">
+    <tr class="tablefirstrow" >
+      <th >NO.</th>
+      <th scope="col" >id</th>
+      <th scope="col" >score</th>
+    </tr>
+    <% @users.each_with_index do |user , i| %>
+      <%= content_tag(:tr, class: "jizz#{i%2}") do %>
+        <td class="no"><%= i+1 %></td>
+        <td class="name"><%= user.name %></td>  
+        <td class="score"><%= user.score %>   </td>
+      <% end %>
+    <% end %>
+  </table>
+</div>

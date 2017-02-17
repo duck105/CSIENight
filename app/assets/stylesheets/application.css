@@ -1,139 +1,499 @@
+body {
+	background-color: #222;
+	color: #DDD;
+}
+
+.pure-img-responsive {
+	max-width: 100%;
+	height: auto;
+}
+
+.img-align-right {
+	float: right;
+	margin-right: 10px;
+}
+
+.image {
+	max-height: 360px;
+	max-width: 360px;
+}
+
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
-
-#posts{
-  position: absolute;
-  width: 70%;
-}
-.post_wrap{
-  top: 500px;
-
-}
-.sidebar{
-  position: fixed;
-  background-color: #fafafa;
-  left:0%;
-  top: 0%;
-  width: 14%;
-  height: 100%;
-  padding: 7em 0 0 0;
-}
-.icon{
-  width: 150px;
-  position: absolute;
-  left: 13%;
-  top: 5%
-}
-ul{
-  position: relative;
-  list-style-type: none;
-  text-align: right;
-  padding-right: 3em;
-}
-ul .category{
-  font-size: 18px;
-  color:#33acb7;
-}
-li{
-
-  padding: 0.5em;
-}
-li a{
-  color:#9eafba;
-  text-decoration: none;
-}
-li a:hover{
-  
-  color:#33acb7;
-  -webkit-transition: 0.3s linear;
-}
-li .active a{
-  color: #33acb7;
+Add transition to containers so they can push in and out.
+*/
+#layout,
+#menu,
+.menu-link {
+	-webkit-transition: all 0.2s ease-out;
+	-moz-transition: all 0.2s ease-out;
+	-ms-transition: all 0.2s ease-out;
+	-o-transition: all 0.2s ease-out;
+	transition: all 0.2s ease-out;
 }
 
-.log_in{
-  position: absolute;
-  right:3em;
-  top: 70%;
-  font-size: 18px;
-  color: #9eafba
+/*
+This is the parent `<div>` that contains the menu and the content area.
+*/
+#layout {
+	position: relative;
+	left: 0;
+	padding-left: 0;
 }
-#main{
-  position: absolute;
-  top:0%;
-  width: 85%;
-  height: 10%;
-  left: 14%;
-  background-color: #fafafa;
-  padding: 15px
-}
-.title {
-  font-weight: 500;
-  text-decoration: none;
-  color: #2a2f35;
-  font-size: 2.0em;
-  margin-bottom: 0;
-}
-.user_name{
-  position: absolute;
-  right:2em;
-  width: 80%;
-  top: 65%
+	#layout.active #menu {
+		left: 150px;
+		width: 150px;
+	}
 
-}
-.pagination{
-  position: absolute;
-  left: 50%;
-  top: 80%;
-  height: 40px;
-  width: 200px;
-}
-#header{
-  font-size: 50px;
-  width: 50%;
+	#layout.active .menu-link {
+		left: 150px;
+	}
+/*
+The content `<div>` is where all your content goes.
+*/
+.content {
+	margin: 0 auto;
+	padding: 0 5em;
+	max-width: 800px;
+	margin-bottom: 50px;
+	font-size: 1.2em;
+	letter-spacing: 0.02em;
+	line-height: 1.6em;
 }
 
-#main_content{
-  margin-left: 250px;
+.content p {
+	margin-left: 20px;
 }
-.buttons{
 
-  width: 50%;
+.header {
+	 margin: 0;
+	 text-align: center;
+	 padding: 2.5em 2em 0;
+	 border-bottom: 1px solid #eee;
+ }
+	.header h1 {
+		margin: 0.2em 0;
+		color: #999;
+		font-size: 3em;
+		font-weight: 300;
+	}
+	 .header h2 {
+		font-weight: 300;
+		color: #BBB;
+		padding: 0;
+		font-size: 1.5em;
+		margin-top: 0;
+	}
+
+.content-title {
+	margin: 50px 0 5px 0;
+	font-weight: 300;
+	font-size: 1.8em;
+	color: #888;
 }
-a:link{
-  text-decoration: none;
-  color: black;
+	
+h2.content-subhead {
+	margin: 50px 0 5px 0;
+	font-weight: 300;
+	font-size: 1.5em;
+	color: #888;
 }
-a:visited{
-  text-decoration: none;
-  color: black;
+
+.content-listed {
+	margin: 15px 0 0 50px;
+	font-weight: 150;
+	font-size: 1.2em;
+	color: #CCC;
 }
+
+.content-hyperlink {
+	margin: 0px 0 0px 0;
+	font-weight: 300;
+	text-align: center;
+	color: #D77;
+}
+
+.content-emphasize {
+	margin: 50px 0 20px 0;
+	font-weight: 300;
+	font-size: 1.8em;
+	text-align: center;
+	color: #D77;
+}
+
+.problem-score-correct {
+	color: #ADA;
+}
+
+.problem-score-incorrect {
+	color: #DAA;
+}
+
+.problem-blank-description {
+	line-height: 2.5em;
+}
+.new_submission{
+	line-height: 2.5em;
+}
+
+.problem-blank{
+	background-color: #444;
+	color: #DDD;
+	line-height: 1.2em;
+	height: 1.5em
+}
+
+.problem-radio-description {
+	line-height: 2.5em;
+}
+
+.problem-radio{
+	line-height: 1.2em;
+	margin-left: 15px;
+}
+
+.content a {
+	color: #DD7;
+}
+
+li.infor, li.Set{
+	margin: 10px auto 10px auto;
+	width: 300px;
+	font-size: 1.2em;
+}
+
+li.Set{
+	font-size: 1.4em;
+	margin:20px auto 20px auto;
+}
+
+ul.Set{
+	text-align: center;
+}
+
+ul.news{
+	list-style-type: none;
+}
+
+ul.profile{
+	list-style-type: none;
+}
+
+a{
+	text-decoration:none;
+}
+
 a:hover{
-  text-decoration: none;
-  color: gray;
-  -webkit-transition: 0.3s linear;
-}
-a:active{
-  text-decoration: none;
-  color: black;
+	color: #AE7;
 }
 
-.jizz1{
-  color: blue
+#left-half {
+	min-width: 330px;
+	padding-top: 50px;
+	width: 50%;
+	float: left;
+	text-align: center;
+	line-height: 1.5em;
 }
-.jizz0{
-  color: red
+
+#right-half {
+	min-width: 330px;
+	padding-top: 50px;
+	width: 50%;
+	float: left;
+	text-align: center;
+}
+
+.login-label {
+	float: left;
+	position: relative;
+	left: 10px;
+}
+
+.login-blank {
+	float: right;
+	position: relative;
+	right: 10px;
+}
+
+.submit-button {
+	position: absolute;
+	margin: 1px 5px 5px 10px;
+	border-radius: 8px;
+	width: 12em;
+	color: #DDD;
+	background-color: #222
+}
+#submit-admin {
+	margin: 5px 5px 5px 5px;
+	border-radius: 8px;
+	height: 1.6em;
+	width: 12em;
+	color: #DDD;
+	background-color: #222
+}
+
+#submit-facebook {
+	margin: 5px 5px 105px 5px;
+	border-radius: 8px;
+	height: 1.6em;
+	width: 12em;
+	color: #dfe3ee;
+	background-color: #3b5998;
+}
+/*
+The `#menu` `<div>` is the parent `<div>` that contains the `.pure-menu` that
+appears on the left side of the page.
+*/
+
+#menu {
+	margin-left: -150px; /* "#menu" width */
+	width: 150px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	z-index: 1000; /* so the menu or its navicon stays above all content */
+	background: #191818;
+	overflow-y: auto;
+	-webkit-overflow-scrolling: touch;
+}
+	/*
+	All anchors inside the menu should be styled like this.
+	*/
+	#menu a {
+		color: #999;
+		border: none;
+		padding: 0.6em 0 0.6em 0.6em;
+	}
+
+	/*
+	Remove all background/borders, since we are applying them to #menu.
+	*/
+	 #menu .pure-menu,
+	 #menu .pure-menu ul {
+		border: none;
+		background: transparent;
+	}
+
+	/*
+	Add that light border to separate items into groups.
+	*/
+	#menu .pure-menu ul,
+	#menu .pure-menu .menu-item-divided {
+		border-top: 1px solid #333;
+	}
+		/*
+		Change color of the anchor links on hover/focus.
+		*/
+		#menu .pure-menu li a:hover,
+		#menu .pure-menu li a:focus {
+			background: #333;
+		}
+
+	/*
+	This styles the selected menu item `<li>`.
+	*/
+	#menu .pure-menu-selected,
+	#menu .pure-menu-heading {
+		background: #1f8dd6;
+	}
+		/*
+		This styles a link within a selected menu item `<li>`.
+		*/
+		#menu .pure-menu-selected a {
+			color: #fff;
+		}
+
+	/*
+	This styles the menu heading.
+	*/
+	#menu .pure-menu-heading {
+		font-size: 110%;
+		color: #fff;
+		margin: 0;
+	}
+
+/* -- Dynamic Button For Responsive Menu -------------------------------------*/
+
+/*
+The button to open/close the Menu is custom-made and not part of Pure. Here's
+how it works:
+*/
+
+/*
+`.menu-link` represents the responsive menu toggle that shows/hides on
+small screens.
+*/
+.menu-link {
+	position: fixed;
+	display: block; /* show this only on small screens */
+	top: 0;
+	left: 0; /* "#menu width" */
+	background: #000;
+	background: rgba(0,0,0,0.7);
+	font-size: 10px; /* change this value to increase/decrease button size */
+	z-index: 10;
+	width: 2em;
+	height: auto;
+	padding: 2.1em 1.6em;
+}
+
+	.menu-link:hover,
+	.menu-link:focus {
+		background: #000;
+	}
+
+	.menu-link span {
+		position: relative;
+		display: block;
+	}
+
+	.menu-link span,
+	.menu-link span:before,
+	.menu-link span:after {
+		background-color: #fff;
+		width: 100%;
+		height: 0.2em;
+	}
+
+		.menu-link span:before,
+		.menu-link span:after {
+			position: absolute;
+			margin-top: -0.6em;
+			content: " ";
+		}
+
+		.menu-link span:after {
+			margin-top: 0.6em;
+		}
+
+
+/* -- Responsive Styles (Media Queries) ------------------------------------- */
+
+/*
+Hides the menu at `48em`, but modify this based on your app's needs.
+*/
+@media (min-width: 48em) {
+
+	.header,
+	.content {
+		padding-left: 2em;
+		padding-right: 2em;
+	}
+
+	#layout {
+		padding-left: 150px; /* left col width "#menu" */
+		left: 0;
+	}
+	#menu {
+		left: 150px;
+	}
+
+	.menu-link {
+		position: fixed;
+		left: 150px;
+		display: none;
+	}
+
+	#layout.active .menu-link {
+		left: 150px;
+	}
+}
+
+@media (max-width: 48em) {
+	/* Only apply this when the window is small. Otherwise, the following
+	case results in extra padding on the left:
+		* Make the window small.
+		* Tap the menu to trigger the active state.
+		* Make the window large again.
+	*/
+	#layout.active {
+		position: relative;
+		left: 150px;
+	}
+}
+
+table{
+	font-size: 1.2em;
+	margin:50px auto 50px auto;
+	border: 3px solid #BBB;
+	color: #BBB;
+}
+
+th, td{
+	padding: 7px 10px 10px 10px;
+}
+
+th{
+	text-transform: uppercase;
+}
+
+.no{
+	width: 150px;
+}
+
+.tablefirstrow{
+	background-color: #234;
+	color: #BBB;
+	border-bottom: 7px double;
+	border-top: 2px solid;
+}
+
+td{
+	padding: 5px 10px 5px 10px;
+}
+
+tr.jizz1{
+	background-color: #222;
+}
+
+tr.jizz0{
+	background-color: #333;
+}
+
+tr.jizz0:hover, tr.jizz1:hover{
+	background-color:#444;
+}
+
+.score{
+	text-align: right;
+	width: 200px;
+}
+
+.name{
+	text-align: center;
+	width: 250px;
+}
+
+div.facebook{
+	margin: 50px 0 20px 0;
+}
+
+p.time{
+	margin-left: 50px;
+	margin-top: 0px;
+	font-size:0.8em;
+	color: #DDA;
+}
+
+dt.question{
+	margin: 50px 0 5px 0;
+	font-weight: 300;
+	font-size: 1.2em;
+	color: #888;
+}
+
+dd.question{
+	margin: 0 30px;
+}
+
+dt.answer{
+	margin: 20px 0 5px 10px;
+	font-weight: 300;
+	font-size: 1.2em;
+	color: #888;
+}
+
+dd.answer{
+	margin: 0 40px;
 }

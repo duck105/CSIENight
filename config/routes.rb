@@ -19,6 +19,9 @@ Rails.application.routes.draw do
   resources :categories
   resources :infors
 
+  get '/about', to: "static_pages#about", as: :static_about
+  get '/play', to: "static_pages#play",  as: :static_play
+
   get 'rank/index'
 
   root "infors#index"

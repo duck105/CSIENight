@@ -1,11 +1,9 @@
-<%= form_for([@question, @submission]) do |f| %>
-  <br>
-  <div>
-    <%= f.label :answer, "答案" %> <br>
-    <%= f.text_area :answer %>
-  </div>
-  <br>
-  <div>
-    <%= f.submit %>
-  </div>
+<%= form_for([@question, @submission],:class => "problem-blank-description") do |f|  %>
+
+    <%= f.text_area :answer, :placeholder => "Answer Here.", :class => "problem-blank" %>
+    <%= f.submit "Submit", :class => "submit-button" %>
+
 <% end %>
+
+
+    

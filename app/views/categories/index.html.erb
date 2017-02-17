@@ -1,8 +1,13 @@
-<div id = "posts">
-  <% @categories.each do |c| %>
-    <div class="post_wrap">
-    <h2 class="title"><%= link_to c.name, category_path(c)%></h2>
-  </div>
+<div class="header">
+  <h1>Problem Set</h1>
+  <% flash.each do |name,msg|%>
+    <h2><%= msg %></h2>
   <% end %>
 </div>
-<br><br>
+<div class="content">
+  <ul class="Set">
+    <% @categories.each do |c| %>
+      <li class="Set"><%= link_to c.name, category_path(c)%></li>
+    <% end %>
+  </ul>
+</div>
