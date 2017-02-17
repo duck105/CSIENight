@@ -1,4 +1,4 @@
-<%= form_for([@question, @question.submissions.new]) do |f| %>
+<%= form_for([@question, @submission]) do |f| %>
   <br>
   
   <% (1..@question.options.count).to_a.each do |i|  %>

@@ -4,6 +4,7 @@ class QuestionsController < ApplicationController
   end
   def show
     @question = Question.find(params[:id])
+    @submission = Submission.new
   end
 
 
