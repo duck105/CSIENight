@@ -25,6 +25,7 @@ class User < ApplicationRecord
     end
     self.save
   end
+  
   def give_punish(punish)
     @answerby = Judge.find_by_id(self.id)
     self.score += punish

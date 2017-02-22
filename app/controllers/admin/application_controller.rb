@@ -6,8 +6,8 @@
 # you're free to overwrite the RESTful controller actions.
 module Admin
   class ApplicationController < Administrate::ApplicationController
-    before_action :authenticate_user!
     before_action :authenticate_admin
+    before_action :configure_permitted_parameters, if: :devise_controller?
 
     def authenticate_admin
       unless current_user and accessible
@@ -15,9 +15,15 @@ module Admin
       end
     end
 
+    protected
+    def configure_permitted_parameters
+      devise_parameter_sanitizer.permit(:account_update) {|u| u.permit(:current_password, :email, :password, :password_confirmation, :name, :score, :is_admin)}
+    end
+
+
     private
     def accessible
-      current_user.is_admin == true
+      current_user.is_admin
     end
 
     # Override this value to specify the number of elements to display at a time
