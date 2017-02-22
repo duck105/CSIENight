@@ -21,7 +21,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     #   end
     # end
     @ranknumber = current_user.count_rank
-    @number = Judge.where("user_id = ?", current_user.id).count
+    @number = Judge.where("user_id = ? AND state = ?", current_user.id, 1).count
     super
   end
 
