@@ -10,7 +10,9 @@ module Admin
     before_action :authenticate_admin
 
     def authenticate_admin
-      redirect_to root_path, alert: 'Not authorized.' unless current_user && accessible
+      unless current_user and accessible
+        raise ActionController::RoutingError.new('Not Found')
+      end
     end
 
     private
