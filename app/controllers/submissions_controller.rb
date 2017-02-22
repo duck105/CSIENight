@@ -2,18 +2,16 @@ class SubmissionsController < ApplicationController
   before_action :authenticate_user!
   def create
     @question = Question.find(params[:question_id])
-    @submission = Submission.new(submission_params)
+    @submission = @question.submissions.create(submission_params)
     @user = current_user
     @submission.user = @user
-    @submission.question = @question
     @score = current_user.score
     @judge = Judge.where("question_id = ? AND user_id = ?", params[:question_id], @user.id).take
     @category = Category.find(@question.category_id)
 
     if @question.correct?(@submission.answer)
       if @judge.nil?
-        @judge = Judge.new
-        @judge.init(@question.id, @user.id,0)
+        @judge = Judge.new(question_id: @question.id, user_id: @user.id, state: 0)
       end
       if @judge.solve_problem?
         flash[:notice] = "Accept!!But you have already answered it"
@@ -27,8 +25,7 @@ class SubmissionsController < ApplicationController
 
     else
       if @judge.nil?
-        @judge = Judge.create
-        @judge.init(@question.id, @user.id,0)
+        @judge = Judge.new(question_id: @question.id, user_id: @user.id, state: 0)
       end
       if @judge.solve_problem?
         flash[:notice] = "Wrong answer!!But you have already answered"
