@@ -16,7 +16,6 @@ gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 
-gem 'mysql2'
 gem 'devise', '~> 4.2'
 gem 'mini_magick', "~> 4.6.0"
 gem 'carrierwave', '~> 1.0'
