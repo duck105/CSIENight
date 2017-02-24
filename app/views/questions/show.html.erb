@@ -42,7 +42,8 @@
       <h2 class="content-subhead">Please Sign in to Answer it!!</h2>
     <% end %>
 
-    <%= link_to "Set Menu",category_path(@question.category) , :class => "submit-button" %>
+    
+    <p class="back-link"><%= link_to "Back to Problem Set",category_path(@question.category) %><p>
 </div>
 
 

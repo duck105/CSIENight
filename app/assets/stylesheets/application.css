@@ -523,3 +523,17 @@ dd.answer{
 .register_facebook:hover {
   background-color: #2250b1;
 }
+
+p.back-link {
+	font-size: 24px;
+	text-align: center;
+	margin-top: 80px;
+}
+
+p.back-link a {
+	color: #DA7;
+}
+
+p.back-link a:hover {
+	color: #D77;
+}
