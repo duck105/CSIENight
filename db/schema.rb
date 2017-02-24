@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170211192035) do
+ActiveRecord::Schema.define(version: 20170224164639) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -71,6 +71,23 @@ ActiveRecord::Schema.define(version: 20170211192035) do
     t.integer  "user_id"
     t.index ["question_id"], name: "index_submissions_on_question_id"
     t.index ["user_id"], name: "index_submissions_on_user_id"
+  end
+
+  create_table "token_judges", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.boolean  "state"
+    t.integer  "user_id"
+    t.integer  "token_id"
+    t.index ["token_id"], name: "index_token_judges_on_token_id"
+    t.index ["user_id"], name: "index_token_judges_on_user_id"
+  end
+
+  create_table "tokens", force: :cascade do |t|
+    t.string   "answer"
+    t.integer  "rewardpoint"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "users", force: :cascade do |t|

@@ -7,6 +7,8 @@ Rails.application.routes.draw do
     resources :users
     resources :submissions
     resources :judges
+    resources :tokens
+    resources :token_judges
     root to: "users#index"
   end
 
@@ -18,6 +20,8 @@ Rails.application.routes.draw do
   end
   resources :categories
   resources :infors
+  resources :tokens , only: [:index]
+  post 'token', to: "tokens#result", as: :result
 
   get '/about', to: "static_pages#about", as: :static_about
   get '/play', to: "static_pages#play",  as: :static_play
