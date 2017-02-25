@@ -1,0 +1,7 @@
+<% flash.each do |name,msg|%>
+  <h2><%= msg %></h2>
+<% end %>
+<%= form_tag result_path, method: :post , :class => "" do %>
+  <%= text_field_tag :search, params[:search], placeholder: "請輸入Token", :class => "" %>
+  <%= submit_tag "Submit", name: nil %>
+<% end %>

@@ -1,0 +1,8 @@
+class CreateTokenJudges < ActiveRecord::Migration[5.0]
+  def change
+    create_table :token_judges do |t|
+
+      t.timestamps
+    end
+  end
+end
