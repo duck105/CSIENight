@@ -537,3 +537,7 @@ p.back-link a {
 p.back-link a:hover {
 	color: #D77;
 }
+
+#check{
+	width: 20px
+}

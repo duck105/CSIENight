@@ -7,12 +7,8 @@
 </div>
 <div class="content">
   <ul class="Set">
-    <% @category.questions.each do |question| %>
-      <% if new_or_not(question) <= 3 %>
-        <%= content_tag(:li, class: "Set") do %><%= link_to question.title, question_path(question) %> <% end %>
-      <% else %>
-        <li class="Set"><%= link_to question.title, question_path(question) %></li>
-      <% end %>
+    <% @questions.each do |question| %>
+      <%= render 'question', {:question => question} %>
     <% end %>
   </ul>
 </div>
