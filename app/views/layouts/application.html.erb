@@ -28,24 +28,11 @@
 
             <li class="pure-menu-item"><%= link_to "Tokens" , tokens_path, :class => "pure-menu-link" %></li>
 
-            <li class="pure-menu-item">
-              <% if user_signed_in? %>
-                <%= link_to "Sign out", destroy_user_session_path, :method => :delete, :class => "pure-menu-link" %>
-              <% else %>
-                <%= link_to "Facebook Login", user_facebook_omniauth_authorize_path, :class => "pure-menu-link"%>
-              <% end %>
-            </li>
-
-            <li class="pure-menu-item" class="menu-item-divided pure-menu-selected">
-              <% if user_signed_in? %>
-                <%= link_to "Profile" , edit_user_registration_path, :class => "pure-menu-link" %>
-              <% end %>
-            </li>
-
             <li class="pure-menu-item"><%= link_to "Rank",rank_index_path, :class => "pure-menu-link" %></li>
             
             <li class="pure-menu-item"><%= link_to "About Us" , static_about_path, :class => "pure-menu-link" %></li>
             <li></li>
+            <%= render 'infors/user' %>
           </ul>
         </div>
       </div>
