@@ -13,4 +13,27 @@
       </ul>
     </div>
   </div>
+
+  <div>
+    <% @submissions.each_with_index do |s, i| %>
+      <%= render_question(@submit_questions[i]) %>
+      <%= render_answer(s, @submit_questions[i]) %>
+      <%= render_point_get(s, @submit_questions[i]) %>
+      <%= s.created_at.localtime.to_s(:db) %>
+      <br>
+    <% end %>
+  </div>
+<br><br>
+  <div>
+    <% @questions.each_slice(5) do |q_row| %>
+      <% q_row.each do |q| %>
+        <% if @judges[q.id] == 1 %>
+          <%= link_to "%04d" % q.id, question_path(q) %>
+        <% else %>
+          <%= link_to "%03d" % q.id, question_path(q) %>
+        <% end %>
+      <% end %>
+      <br>
+    <% end %>
+  </div>
 </div>

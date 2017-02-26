@@ -14,14 +14,23 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # GET /resource/edit
   def edit
-    # @users = User.order(:score => :desc, :name => :asc)
-    # @users.each_with_index do |user, i|
-    #   if user.name == current_user.name or user.email == current_user.email
-    #     @ranknumber = i+1
-    #   end
-    # end
     @ranknumber = current_user.count_rank
     @number = Judge.where("user_id = ? AND state = ?", current_user.id, 1).count
+    @submissions = Submission.where("user_id = ? ", current_user.id).last(10).reverse
+    @submit_questions = Array.new(15)
+    @questions = Question.all
+
+    @submissions.each_with_index do |s, i|
+      q = Question.find(s.question_id)
+      @submit_questions[i] = q 
+    end
+
+    judge = current_user.judges.all
+    @judges = Array.new(@questions.count+1)
+    judge.each do |j|
+      @judges[j.question_id] = j.state  
+    end
+
     super
   end
 
