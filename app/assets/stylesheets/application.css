@@ -188,9 +188,7 @@ a:hover{
 
 #left-half {
 	min-width: 330px;
-	padding-top: 50px;
-	width: 50%;
-	float: left;
+	padding-top: 100px;
 	text-align: center;
 	line-height: 1.5em;
 }
@@ -518,6 +516,7 @@ dd.answer{
   color: #fff;
   font-size: 16px;
   font-weight: 700;
+  margin: auto;
 }
 
 .register_facebook:hover {
