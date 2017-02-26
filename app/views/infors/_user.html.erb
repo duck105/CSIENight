@@ -1,17 +1,17 @@
 <li class="pure-menu-item">
   <% if user_signed_in? %>
-    <%= link_to "Sign out", destroy_user_session_path, :method => :delete, :class => "pure-menu-link" %>
+    <%= link_to "Sign out", destroy_user_session_path, :method => :delete, class: "pure-menu-link", id: "login_link" %>
   <% else %>
-    <%= link_to "Facebook Login", user_facebook_omniauth_authorize_path, :class => "pure-menu-link"%>
-  <% end %>
-</li>
-
-<li class="pure-menu-item" class="menu-item-divided pure-menu-selected">
-  <% if user_signed_in? %>
-    <%= link_to "Profile" , edit_user_registration_path, :class => "pure-menu-link" %>
+    <%= link_to "Facebook Login", user_facebook_omniauth_authorize_path, class: "pure-menu-link", id: "login_link" %>
   <% end %>
 </li>
 
 <li class="pure-menu-item" class="menu-item-divided pure-menu-selected">
   <%= render_hi_user %>
+</li>
+
+<li class="pure-menu-item" class="menu-item-divided pure-menu-selected">
+  <% if user_signed_in? %>
+    <%= link_to "Profile" , edit_user_registration_path, class: "pure-menu-link" %>
+  <% end %>
 </li>
