@@ -30,9 +30,15 @@
             
             <li class="pure-menu-item"><%= link_to "About Us" , static_about_path, :class => "pure-menu-link" %></li>
             <li></li>
+          </ul>
+        </div>
+        <div class="pure-menu">
+          <%= link_to "Account", root_path, :class => "pure-menu-heading" %>
+          <ul class="pure-menu-list">
             <%= render 'infors/user' %>
           </ul>
         </div>
+
       </div>
       <%= yield %>
     </div>

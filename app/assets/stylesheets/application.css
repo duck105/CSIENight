@@ -490,11 +490,11 @@ tr.jizz0:hover, tr.jizz1:hover{
 	line-height: 1.6em;
 }
 
-tr.profile-table-row1{
+tr.profile-table-row0{
 	background-color: #222;
 }
 
-tr.profile-table-row0{
+tr.profile-table-row1{
 	background-color: #333;
 }
 
@@ -610,4 +610,24 @@ p.back-link a:hover {
 
 #login_link{
 	margin-top: 350px
+}
+
+a.accept {
+	color: #ADA;
+	margin-left: 0.4em;
+	margin-top: 0.2em;
+}
+
+a.non_accept{
+	color: #888;
+	margin-left: 0.4em;
+	margin-top: 0.2em;
+}
+a:hover{
+	color: #AE7;
+}
+
+.question-list{
+	margin-left: 2.5em;
+	font-size: 1.2em; 
 }

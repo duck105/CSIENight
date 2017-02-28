@@ -18,15 +18,24 @@
       </div>
     </div>
     <div id="profile-picture">
-      <img class="image" src="http://lh6.ggpht.com/-TtsiwhWNYT4/VIMDO7yz8xI/AAAAAAAARjs/DQiWQVrXGf8/firefox-backgrounds_thumb1.jpg?imgmax=800" alt="Profile Image">
+      <%= image_tag(@user.avatar.square.to_s, :class => "image") %>
     </div>
 
   
     <div id="profile-problem-list">
       <h2 class="content-head">Problem List</h2>
-      <p>
-        <a class="profile-problem-name" href="Problem_Template.html">Problem Template</a>
-      </p>
+      <div class="question-list" >
+        <% @questions.each_slice(10) do |q_row| %>
+          <% q_row.each do |q| %>
+            <% if @judges[q.id] == 1 %>
+              <%= link_to "%03d" % q.id, question_path(q), class: "accept" %>
+            <% else %>
+              <%= link_to "%03d" % q.id, question_path(q), class: "non_accept" %>
+            <% end %>
+          <% end %>
+          <br>
+        <% end %>
+      </div>
     </div>
 
     <div id="submission-table">
@@ -48,19 +57,5 @@
         <% end %>
       </table>
     </div>
-  </div>
-
-<br><br>
-  <div>
-    <% @questions.each_slice(5) do |q_row| %>
-      <% q_row.each do |q| %>
-        <% if @judges[q.id] == 1 %>
-          <%= link_to "%04d" % q.id, question_path(q) %>
-        <% else %>
-          <%= link_to "%03d" % q.id, question_path(q) %>
-        <% end %>
-      <% end %>
-      <br>
-    <% end %>
   </div>
 </div>
