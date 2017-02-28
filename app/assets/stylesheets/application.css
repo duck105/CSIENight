@@ -42,6 +42,10 @@ This is the parent `<div>` that contains the menu and the content area.
 	#layout.active #menu {
 		left: 150px;
 		width: 150px;
+		border-right-style: solid;
+		border-right-width: 1px;
+		border-right-color: #DDD;
+
 	}
 
 	#layout.active .menu-link {
@@ -52,7 +56,7 @@ The content `<div>` is where all your content goes.
 */
 .content {
 	margin: 0 auto;
-	padding: 0 5em;
+	padding: 0 2.5em;
 	max-width: 800px;
 	margin-bottom: 50px;
 	font-size: 1.2em;
@@ -175,7 +179,39 @@ ul.news{
 }
 
 ul.profile{
+	padding-left: 0px;
+	text-align: left;
 	list-style-type: none;
+}
+
+#profile-content {
+	min-width: 360px;
+	padding-top: 50px;
+	width: 50%;
+	float: left;
+	line-height: 1.5em;
+}
+
+#profile-picture {
+	min-width: 360px;
+	padding-top: 50px;
+	width: 50%;
+	float: left;
+}
+
+#profile-problem-list {
+	padding-top: 50px;
+	width: 100%;
+	float: left;
+	text-align: left;
+}
+
+#submission-table {
+	min-width: 800px;
+	padding: 50px 50px 50px 0px;
+	width: 100%;
+	float: left;
+	text-align: left;
 }
 
 a{
@@ -427,6 +463,7 @@ th{
 }
 
 .tablefirstrow{
+	text-align: center;
 	background-color: #234;
 	color: #BBB;
 	border-bottom: 7px double;
@@ -449,14 +486,44 @@ tr.jizz0:hover, tr.jizz1:hover{
 	background-color:#444;
 }
 
+#submission-table table{
+	line-height: 1.6em;
+}
+
+tr.profile-table-row1{
+	background-color: #222;
+}
+
+tr.profile-table-row0{
+	background-color: #333;
+}
+
 .score{
 	text-align: right;
-	width: 200px;
+	min-width: 150px;
 }
 
 .name{
 	text-align: center;
-	width: 250px;
+	min-width: 250px;
+}
+
+.verdict{
+	text-align: center;
+	min-width: 180px;
+}
+
+.submit-time {
+	text-align: center;
+	min-width: 180px;
+}
+
+.AC{
+	color: #ADA;
+}
+
+.WA{
+	color: #DAA;
 }
 
 div.facebook{

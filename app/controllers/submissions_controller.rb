@@ -1,5 +1,6 @@
 class SubmissionsController < ApplicationController
   before_action :authenticate_user!
+  
   def create
     @question = Question.find(params[:question_id])
     @submission = @question.submissions.create(submission_params)
@@ -13,7 +14,7 @@ class SubmissionsController < ApplicationController
       if @judge.nil?
         @judge = Judge.new(question_id: @question.id, user_id: @user.id, state: 0)
       end
-      if @judge.solve_problem?
+      if @judge.ever_solve_problem?
         flash[:notice] = "Accept!!But you have already answered it"
         redirect_to category_path(@category)
       else
@@ -27,7 +28,7 @@ class SubmissionsController < ApplicationController
       if @judge.nil?
         @judge = Judge.new(question_id: @question.id, user_id: @user.id, state: 0)
       end
-      if @judge.solve_problem?
+      if @judge.ever_solve_problem?
         flash[:notice] = "Wrong answer!!But you have already answered"
         redirect_to category_path(@category)
       else

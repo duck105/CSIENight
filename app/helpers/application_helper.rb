@@ -11,9 +11,9 @@ module ApplicationHelper
 
   def render_answer(submission, q)
     if q.answer == submission.answer
-      return "AC"
+      return content_tag(:font, "Accepted", class: "AC" )
     else
-      return "WA"
+      return content_tag(:font, "Wrong Answer", class: "WA" )
     end
   end
 

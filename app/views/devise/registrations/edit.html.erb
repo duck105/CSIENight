@@ -5,24 +5,48 @@
   </div>
 
   <div class="content">
-    <div class="ul" >
-      <ul class="profile">          
-        <li class="infor">Your Score: <%= current_user.score %></li>
-        <li class="infor">Your Rank: <%= @ranknumber %></li>
-        <li class="infor">Accept Counter: <%= @number %></li>
-      </ul>
+    <div id="profile-content">
+      <div class="ul" >
+        <ul class="profile">          
+          <li class="infor">Your Score: <%= current_user.score %></li>
+          <li class="infor">Your Rank: <%= @ranknumber %></li>
+          <li class="infor">Accept Counter: <%= @number %></li>
+        </ul>
+      </div>
+    </div>
+    <div id="profile-picture">
+      <img class="image" src="http://lh6.ggpht.com/-TtsiwhWNYT4/VIMDO7yz8xI/AAAAAAAARjs/DQiWQVrXGf8/firefox-backgrounds_thumb1.jpg?imgmax=800" alt="Profile Image">
+    </div>
+
+  
+    <div id="profile-problem-list">
+      <h2 class="content-head">Problem List</h2>
+      <p>
+        <a class="profile-problem-name" href="Problem_Template.html">Problem Template</a>
+      </p>
+    </div>
+
+    <div id="submission-table">
+      <h2 class="content-head">Recent Submissions</h2>
+      <table border="1">
+        <tr class="tablefirstrow">
+          <th scope="col">Problem</th>
+          <th scope="col">Verdict</th>
+          <th scope="col">Points Get</th>
+          <th scope="col">Submit Time</th>
+        </tr>
+        <% @submissions.each_with_index do |s, i| %>
+          <%= content_tag :tr, class: "profile-table-row#{i%2}" do %>
+            <td class="name"><%= render_question(@submit_questions[i]) %></td>
+            <td class="verdict"><%= render_answer(s, @submit_questions[i]) %></td>
+            <td class="score"><%= render_point_get(s, @submit_questions[i]) %></td>
+            <td class="submit-time"><%= s.created_at.localtime.to_s(:db) %></td>
+          <% end %>
+        <% end %>
+      </table>
     </div>
   </div>
 
-  <div>
-    <% @submissions.each_with_index do |s, i| %>
-      <%= render_question(@submit_questions[i]) %>
-      <%= render_answer(s, @submit_questions[i]) %>
-      <%= render_point_get(s, @submit_questions[i]) %>
-      <%= s.created_at.localtime.to_s(:db) %>
-      <br>
-    <% end %>
-  </div>
 <br><br>
   <div>
     <% @questions.each_slice(5) do |q_row| %>
