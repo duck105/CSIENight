@@ -9,19 +9,23 @@ module ApplicationHelper
     return link_to(q.title, question_path(q))
   end
 
-  def render_answer(submission, q)
-    if q.answer == submission.answer
+  def render_answer(submission)
+    if submission.state == "AC"
       return content_tag(:font, "Accepted", class: "AC" )
-    else
+    elsif submission.state == "WA"
       return content_tag(:font, "Wrong Answer", class: "WA" )
+    elsif submission.state == "answered"
+      return content_tag(:font, "Resubmitted" )
     end
   end
 
   def render_point_get(submission, q)
-    if q.answer == submission.answer
+    if submission.state == "AC"
       return q.rewardpoint
-    else
+    elsif submission.state == "WA"
       return q.punishpoint
+    else
+      return 0
     end
   end
 end

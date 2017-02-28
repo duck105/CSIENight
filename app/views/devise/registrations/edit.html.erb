@@ -2,6 +2,9 @@
   <div class="header">
     <h1>User</h1>
     <h2><%= current_user.name.to_s.humanize %><h2>
+    <% flash.each do |name,msg|%>
+      <h2><%= msg %></h2>
+    <% end %>      
   </div>
 
   <div class="content">
@@ -38,7 +41,7 @@
         <% @submissions.each_with_index do |s, i| %>
           <%= content_tag :tr, class: "profile-table-row#{i%2}" do %>
             <td class="name"><%= render_question(@submit_questions[i]) %></td>
-            <td class="verdict"><%= render_answer(s, @submit_questions[i]) %></td>
+            <td class="verdict"><%= render_answer(s) %></td>
             <td class="score"><%= render_point_get(s, @submit_questions[i]) %></td>
             <td class="submit-time"><%= s.created_at.localtime.to_s(:db) %></td>
           <% end %>

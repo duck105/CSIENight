@@ -1,6 +1,6 @@
 <%= form_for([@question, @submission]) do |f| %>
   <% (1..@question.options.count).to_a.each do |i|  %>
-    <%= f.radio_button :answer, i , :class => "problem-radio"%>
+    <%= f.radio_button :answer, i , class: "problem-radio", required: "required" %>
     <%= f.label :answer, "(#{i})" %>   
   <% end %>
   <br>
