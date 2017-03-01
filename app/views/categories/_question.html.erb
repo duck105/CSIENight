@@ -1,7 +1,7 @@
 <% if new_or_not(question) <= 3 %>
   <%= content_tag(:li, class: "Set") do %>
-  	<%= link_to question.title, question_path(question) %>
-    <%= question_check_mark(question) %>
+  	<%= question_check_mark(question) %>
+    <%= link_to question.title, question_path(question) %>
   <% end %>
 <% else %>
   <li class="Set">    

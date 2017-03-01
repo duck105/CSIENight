@@ -3,9 +3,9 @@
   <head>
     <title>CSIENight</title>
     <%= csrf_meta_tags %>
+    <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.2/build/pure-min.css" integrity="sha384-" crossorigin="anonymous">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.2/build/pure-min.css" integrity="sha384-" crossorigin="anonymous">
   </head>
   <body>
     <div id="layout">
@@ -30,9 +30,15 @@
             
             <li class="pure-menu-item"><%= link_to "About Us" , static_about_path, :class => "pure-menu-link" %></li>
             <li></li>
+          </ul>
+        </div>
+        <div class="pure-menu">
+          <%= link_to "Account", root_path, :class => "pure-menu-heading" %>
+          <ul class="pure-menu-list">
             <%= render 'infors/user' %>
           </ul>
         </div>
+
       </div>
       <%= yield %>
     </div>

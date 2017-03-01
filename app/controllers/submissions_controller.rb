@@ -1,5 +1,6 @@
 class SubmissionsController < ApplicationController
   before_action :authenticate_user!
+
   def create
     @question = Question.find(params[:question_id])
     @submission = @question.submissions.create(submission_params)
@@ -7,37 +8,39 @@ class SubmissionsController < ApplicationController
     @submission.user = @user
     @score = current_user.score
     @judge = Judge.where("question_id = ? AND user_id = ?", params[:question_id], @user.id).take
-    @category = Category.find(@question.category_id)
 
     if @question.correct?(@submission.answer)
       if @judge.nil?
         @judge = Judge.new(question_id: @question.id, user_id: @user.id, state: 0)
       end
-      if @judge.solve_problem?
+
+      if @judge.ever_solve_problem?
         flash[:notice] = "Accept!!But you have already answered it"
-        redirect_to category_path(@category)
+        @submission.state = "answered"
       else
         @user.give_reward(@question.rewardpoint.to_i)
         @judge.update(1)
         flash[:notice] = "Accept!!"
-        redirect_to category_path(@category)
+        @submission.state = "AC"
       end
 
     else
       if @judge.nil?
         @judge = Judge.new(question_id: @question.id, user_id: @user.id, state: 0)
       end
-      if @judge.solve_problem?
+      if @judge.ever_solve_problem?
         flash[:notice] = "Wrong answer!!But you have already answered"
-        redirect_to category_path(@category)
+        @submission.state = "answered"
       else
         @user.give_punish(@question.punishpoint.to_i)
         @judge.update(2)
-        redirect_to category_path(@category)
         flash[:alert] = "Wrong answer!!"
+        @submission.state = "WA"
       end
     end
     @submission.save
+    
+    redirect_to edit_user_registration_path
   end
 
 

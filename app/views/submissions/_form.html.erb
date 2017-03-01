@@ -1,6 +1,6 @@
 <%= form_for([@question, @submission],:class => "problem-blank-description") do |f|  %>
 
-    <%= f.text_area :answer, :placeholder => "Answer Here.", :class => "problem-blank" %>
+    <%= f.text_area :answer, :placeholder => "Answer Here.", :class => "problem-blank", required: "required" %>
     <%= f.submit "Submit", :class => "submit-button" %>
 
 <% end %>
