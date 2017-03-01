@@ -6,7 +6,7 @@
     <% end %>
    </div>
    <div class="content">
-    <p class="content-emphasize"><%= @question.title %></p>
+    <h1 class="question-title"><%= @question.title %></h1>
     
     <div class="problem_description">
       <div class="img-align-right">
@@ -17,10 +17,6 @@
         <%= @question.spec %>
       </p>
     </div>
-
-    <% @options.each do |option|%>
-      <p><%= option.body %></p>
-    <% end %>
 
     <div class="problem-score">
       <h2 class="content-subhead">Problem Score</h2>

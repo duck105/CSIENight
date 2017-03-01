@@ -92,7 +92,7 @@ The content `<div>` is where all your content goes.
 }
 	
 h2.content-subhead {
-	margin: 50px 0 5px 0;
+	margin: 30px 0 5px 0;
 	font-weight: 300;
 	font-size: 1.5em;
 	color: #888;
@@ -121,11 +121,13 @@ h2.content-subhead {
 }
 
 .problem-score-correct {
-	color: #ADA;
+	color: rgb(15, 224, 15);
+	margin: 10px;
 }
 
 .problem-score-incorrect {
-	color: #DAA;
+	color: #ff2f2f;
+	margin: 10px;
 }
 
 .problem-blank-description {
@@ -409,25 +411,38 @@ Hides the menu at `48em`, but modify this based on your app's needs.
 
 table{
 	font-size: 1.2em;
-	margin:50px auto 50px auto;
-	border: 3px solid #BBB;
+	margin: 50px auto 50px auto;
+	border: 2px solid #BBB;
 	color: #BBB;
-}
-
-th, td{
-	padding: 7px 10px 10px 10px;
 }
 
 th{
 	text-transform: uppercase;
+	color: #EEE;
+}
+
+.no, .name, .score {
+	color: #EEE;
+	padding: 2px 5px;
 }
 
 .no{
+	text-align: center;
 	width: 150px;
 }
 
+.name{
+	text-align: center;
+	width: 225px;
+}
+
+.score{
+	text-align: right;
+	width: 225px;
+}
+
 .tablefirstrow{
-	background-color: #234;
+	background-color: #354b7d;
 	color: #BBB;
 	border-bottom: 7px double;
 	border-top: 2px solid;
@@ -438,25 +453,15 @@ td{
 }
 
 tr.jizz1{
-	background-color: #222;
-}
-
-tr.jizz0{
 	background-color: #333;
 }
 
+tr.jizz0{
+	background-color: #444;
+}
+
 tr.jizz0:hover, tr.jizz1:hover{
-	background-color:#444;
-}
-
-.score{
-	text-align: right;
-	width: 200px;
-}
-
-.name{
-	text-align: center;
-	width: 250px;
+	background-color:#555;
 }
 
 div.facebook{
@@ -537,10 +542,36 @@ p.back-link a:hover {
 	color: #D77;
 }
 
-#check{
-	width: 20px
-}
-
 #login_link{
 	margin-top: 350px
+}
+
+#check, #cancel, #cursor {
+	float: right;
+	height: 100%;
+	margin-left: 25px; 
+}
+
+#new {
+	float: left;
+	height: 100%;
+}
+
+.Set-div {
+	border: 1px solid lightgrey;
+	border-radius: 5px;
+	margin: 10px auto;
+	padding: 0.25em;
+	max-width: 24em;
+	height: 1.5em;
+	text-align: center;
+}
+
+.Set-div:hover {
+	background-color: #666;
+}
+
+.question-title {
+	text-align: center;
+	color: #ffff6c;
 }

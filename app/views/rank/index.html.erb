@@ -9,14 +9,14 @@
   <table border="1">
     <tr class="tablefirstrow" >
       <th >NO.</th>
-      <th scope="col" >id</th>
-      <th scope="col" >score</th>
+      <th scope="col">id</th>
+      <th scope="col">score</th>
     </tr>
     <% @users.each_with_index do |user , i| %>
       <%= content_tag(:tr, class: "jizz#{i%2}") do %>
         <td class="no"><%= i+1 %></td>
         <td class="name"><%= user.name %></td>  
-        <td class="score"><%= user.score %>   </td>
+        <td class="score"><%= user.score %></td>
       <% end %>
     <% end %>
   </table>
