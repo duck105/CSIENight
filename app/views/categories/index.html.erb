@@ -5,9 +5,9 @@
   <% end %>
 </div>
 <div class="content">
-  <ul class="Set">
-    <% @categories.each do |c| %>
-      <li class="Set"><%= link_to c.name, category_path(c)%></li>
+  <% @categories.each do |c| %>
+    <%= link_to category_path(c) do %>
+      <div class="Set-div"><%= c.name %></div>
     <% end %>
-  </ul>
+  <% end %>
 </div>

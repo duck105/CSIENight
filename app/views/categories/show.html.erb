@@ -6,11 +6,9 @@
   <% end %>
 </div>
 <div class="content">
-  <ul class="Set">
-    <% @questions.each do |question| %>
-      <%= render 'question', {:question => question} %>
-    <% end %>
-  </ul>
+  <% @questions.each do |question| %>
+    <%= render 'question', {:question => question} %>
+  <% end %>
 </div>
 <p class="back-link"><%= link_to "Back to Problem Set Menu",categories_path %><p>
 

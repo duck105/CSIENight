@@ -96,7 +96,7 @@ The content `<div>` is where all your content goes.
 }
 	
 h2.content-subhead {
-	margin: 50px 0 5px 0;
+	margin: 30px 0 5px 0;
 	font-weight: 300;
 	font-size: 1.5em;
 	color: #888;
@@ -125,11 +125,13 @@ h2.content-subhead {
 }
 
 .problem-score-correct {
-	color: #ADA;
+	color: rgb(15, 224, 15);
+	margin: 10px;
 }
 
 .problem-score-incorrect {
-	color: #DAA;
+	color: #ff2f2f;
+	margin: 10px;
 }
 
 .problem-blank-description {
@@ -445,26 +447,38 @@ Hides the menu at `48em`, but modify this based on your app's needs.
 
 table{
 	font-size: 1.2em;
-	margin:50px auto 50px auto;
-	border: 3px solid #BBB;
+	margin: 50px auto 50px auto;
+	border: 2px solid #BBB;
 	color: #BBB;
-}
-
-th, td{
-	padding: 7px 10px 10px 10px;
 }
 
 th{
 	text-transform: uppercase;
+	color: #EEE;
+}
+
+.no, .name, .score {
+	color: #EEE;
+	padding: 2px 5px;
 }
 
 .no{
+	text-align: center;
 	width: 150px;
 }
 
-.tablefirstrow{
+.name{
 	text-align: center;
-	background-color: #234;
+	width: 225px;
+}
+
+.score{
+	text-align: right;
+	width: 225px;
+}
+
+.tablefirstrow{
+	background-color: #354b7d;
 	color: #BBB;
 	border-bottom: 7px double;
 	border-top: 2px solid;
@@ -475,55 +489,16 @@ td{
 }
 
 tr.jizz1{
-	background-color: #222;
+	background-color: #333;
 }
 
 tr.jizz0{
-	background-color: #333;
+	background-color: #444;
 }
 
 tr.jizz0:hover, tr.jizz1:hover{
-	background-color:#444;
-}
 
-#submission-table table{
-	line-height: 1.6em;
-}
-
-tr.profile-table-row0{
-	background-color: #222;
-}
-
-tr.profile-table-row1{
-	background-color: #333;
-}
-
-.score{
-	text-align: right;
-	min-width: 150px;
-}
-
-.name{
-	text-align: center;
-	min-width: 250px;
-}
-
-.verdict{
-	text-align: center;
-	min-width: 180px;
-}
-
-.submit-time {
-	text-align: center;
-	min-width: 180px;
-}
-
-.AC{
-	color: #ADA;
-}
-
-.WA{
-	color: #DAA;
+	background-color:#555;
 }
 
 div.facebook{
@@ -604,30 +579,36 @@ p.back-link a:hover {
 	color: #D77;
 }
 
-#check{
-	width: 20px
-}
-
 #login_link{
 	margin-top: 350px
 }
 
-a.accept {
-	color: #ADA;
-	margin-left: 0.4em;
-	margin-top: 0.2em;
+#check, #cancel, #cursor {
+	float: right;
+	height: 100%;
+	margin-left: 25px; 
 }
 
-a.non_accept{
-	color: #888;
-	margin-left: 0.4em;
-	margin-top: 0.2em;
-}
-a:hover{
-	color: #AE7;
+#new {
+	float: left;
+	height: 100%;
 }
 
-.question-list{
-	margin-left: 2.5em;
-	font-size: 1.2em; 
+.Set-div {
+	border: 1px solid lightgrey;
+	border-radius: 5px;
+	margin: 10px auto;
+	padding: 0.25em;
+	max-width: 24em;
+	height: 1.5em;
+	text-align: center;
+}
+
+.Set-div:hover {
+	background-color: #666;
+}
+
+.question-title {
+	text-align: center;
+	color: #ffff6c;
 }
