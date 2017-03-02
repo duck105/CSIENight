@@ -455,11 +455,12 @@ table{
 th{
 	text-transform: uppercase;
 	color: #EEE;
+	padding: 10px 10px 10px 10px;
 }
 
 .no, .name, .score {
 	color: #EEE;
-	padding: 2px 5px;
+	padding: 5px 10px;
 }
 
 .no{
@@ -469,16 +470,17 @@ th{
 
 .name{
 	text-align: center;
-	width: 225px;
+	min-width: 250px;
 }
 
 .score{
 	text-align: right;
-	width: 225px;
+	min-width: 150px;
 }
 
 .tablefirstrow{
 	background-color: #354b7d;
+	text-align: center;
 	color: #BBB;
 	border-bottom: 7px double;
 	border-top: 2px solid;
@@ -503,6 +505,24 @@ tr.jizz0:hover, tr.jizz1:hover{
 
 div.facebook{
 	margin: 50px 0 20px 0;
+}
+
+.verdict{
+ 	text-align: center;
+ 	min-width: 180px;
+}
+
+.submit-time {
+	text-align: center;
+	min-width: 180px;
+}
+
+.AC{
+	color: #ADA;
+}
+
+.WA{
+	color: #DAA;
 }
 
 p.time{
@@ -611,4 +631,28 @@ p.back-link a:hover {
 .question-title {
 	text-align: center;
 	color: #ffff6c;
+}
+
+#submission-table table{
+	line-height: 1.6em;
+}
+
+tr.profile-table-row0{
+	background-color: #222;
+}
+
+tr.profile-table-row1{
+	background-color: #333;
+}
+
+a.non_accept{
+ 	color: #888;
+ 	margin-left: 0.4em;
+ 	margin-top: 0.2em;
+}
+
+a.accept {
+	color: #ADA;
+	margin-left: 0.4em;
+	margin-top: 0.2em;
 }
