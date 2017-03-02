@@ -7,7 +7,7 @@ class Judge < ApplicationRecord
     self.save
   end
 
-  def solve_problem?
+  def ever_solve_problem?
     self.state == 1
   end
 end

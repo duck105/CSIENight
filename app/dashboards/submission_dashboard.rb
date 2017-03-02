@@ -14,6 +14,7 @@ class SubmissionDashboard < Administrate::BaseDashboard
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
     answer: Field::String,
+    state: Field::String,
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -25,6 +26,7 @@ class SubmissionDashboard < Administrate::BaseDashboard
     :question,
     :user,
     :id,
+    :state,
     :created_at,
   ].freeze
 
@@ -34,6 +36,7 @@ class SubmissionDashboard < Administrate::BaseDashboard
     :question,
     :user,
     :id,
+    :state,
     :created_at,
     :updated_at,
     :answer,

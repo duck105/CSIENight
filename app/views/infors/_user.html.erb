@@ -1,8 +1,8 @@
 <li class="pure-menu-item">
   <% if user_signed_in? %>
-    <%= link_to "Sign out", destroy_user_session_path, :method => :delete, class: "pure-menu-link", id: "login_link" %>
+    <%= link_to "Sign out", destroy_user_session_path, :method => :delete, class: "pure-menu-link" %>
   <% else %>
-    <%= link_to "Facebook Login", user_facebook_omniauth_authorize_path, class: "pure-menu-link", id: "login_link" %>
+    <%= link_to "Facebook Login", user_facebook_omniauth_authorize_path, class: "pure-menu-link" %>
   <% end %>
 </li>
 
