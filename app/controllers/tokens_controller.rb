@@ -16,7 +16,7 @@ class TokensController < ApplicationController
         token_judge.save
       else
         current_user.give_reward(token.rewardpoint.to_i)
-        flash[:notice] = "Accept!!"
+        flash[:notice] = "Accept!!You have got #{token.rewardpoint.to_i} points!"
         token_judge.state = true
         token_judge.save
       end

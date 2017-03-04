@@ -1,7 +1,27 @@
-<% flash.each do |name,msg|%>
-  <h2><%= msg %></h2>
-<% end %>
-<%= form_tag result_path, method: :post , :class => "" do %>
-  <%= text_field_tag :search, params[:search], placeholder: "請輸入Token", :class => "" %>
-  <%= submit_tag "Submit", name: nil %>
-<% end %>
+<div id="main">
+  <div class="header">
+    <h1>Token</h1>
+    <h2>JUST DO IT!! DO IT!!</h2>
+    <% flash.each do |name,msg|%>
+      <h2><%= msg %></h2>
+    <% end %>
+  </div>
+
+  <div class="content">
+    <%= form_tag result_path, method: :post , :class => "token" do %>
+      <%= text_field_tag :search, params[:search], placeholder: "請輸入Token", :class => "input-token" %>
+      <%= submit_tag "Submit", name: nil, :class => "token-button" %>
+    <% end %>
+  </div>
+  
+  <div class="header" >
+      <h1 >Token是什麼?能吃嗎?</h1>
+  </div>
+  
+  <div class="content">
+    <h2 class="content-title">Rules:</h2>
+    <p class="content-listed">1.在資訊之夜相關之處尋找線索</p>
+    <p class="content-listed">2.將得到的Token輸入上方欄位</p>
+    <p class="content-listed">3.輸入正確即可獲得積分獎勵!</p>
+  </div>
+</div>

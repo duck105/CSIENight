@@ -656,3 +656,19 @@ a.accept {
 	margin-left: 0.4em;
 	margin-top: 0.2em;
 }
+
+.input-token {
+ 	margin: 20px 0px 5px 5px;
+ 	font-size: 180%;
+ 	color: #DDD;
+ 	background-color: #444;
+}
+.token-button {
+  font-size: 150%;
+	margin: 5px 5px 5px 5px;
+	border-radius: 8px;
+	height: 1.6em;
+	width: 12em;
+	color: #DDD;
+	background-color: #222
+}
