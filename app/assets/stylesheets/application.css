@@ -672,3 +672,11 @@ a.accept {
 	color: #DDD;
 	background-color: #222
 }
+.footer{
+	background: #111;
+  color: #7f8c8d;
+  padding: 1em 1em;
+  bottom: 0px;
+  margin-top: 250px;
+  text-align: center;
+}
