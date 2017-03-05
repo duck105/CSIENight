@@ -1,0 +1,61 @@
+<div id="main">
+  <div class="header">
+    <h1>User</h1>
+    <h2><%= current_user.name.to_s.humanize %><h2>
+    <% flash.each do |name,msg|%>
+      <h2><%= msg %></h2>
+    <% end %>      
+  </div>
+
+  <div class="content">
+    <div id="profile-content">
+      <div class="ul" >
+        <ul class="profile">          
+          <li class="infor">Your Score: <%= current_user.score %></li>
+          <li class="infor">Your Rank: <%= @ranknumber %></li>
+          <li class="infor">Accept Counter: <%= @number %></li>
+        </ul>
+      </div>
+    </div>
+    <div id="profile-picture">
+      <%= image_tag(@user.avatar.square.to_s, :class => "image") %>
+    </div>
+
+  
+    <div id="profile-problem-list">
+      <h2 class="content-head">Problem List</h2>
+      <div class="question-list" >
+        <% @questions.each_slice(10) do |q_row| %>
+          <% q_row.each do |q| %>
+            <% if @judges[q.id] == 1 %>
+              <%= link_to "%03d" % q.id, question_path(q), class: "accept" %>
+            <% else %>
+              <%= link_to "%03d" % q.id, question_path(q), class: "non_accept" %>
+            <% end %>
+          <% end %>
+          <br>
+        <% end %>
+      </div>
+    </div>
+
+    <div id="submission-table">
+      <h2 class="content-head">Recent Submissions</h2>
+      <table border="1">
+        <tr class="tablefirstrow">
+          <th scope="col">Problem</th>
+          <th scope="col">Verdict</th>
+          <th scope="col">Points Get</th>
+          <th scope="col">Submit Time</th>
+        </tr>
+        <% @submissions.each_with_index do |s, i| %>
+          <%= content_tag :tr, class: "profile-table-row#{i%2}" do %>
+            <td class="name"><%= render_question(@submit_questions[i]) %></td>
+            <td class="verdict"><%= render_answer(s) %></td>
+            <td class="score"><%= render_point_get(s, @submit_questions[i]) %></td>
+            <td class="submit-time"><%= s.created_at.localtime.to_s(:db) %></td>
+          <% end %>
+        <% end %>
+      </table>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,2 @@
+class Infor < ApplicationRecord
+end

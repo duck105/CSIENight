@@ -1,0 +1,14 @@
+<div class="header">
+  <h1>Problem Set</h1>
+  <h2><%= @category.name %></h2>
+  <% flash.each do |name,msg|%>
+    <h2><%= msg %></h2>
+  <% end %>
+</div>
+<div class="content">
+  <% @questions.each do |question| %>
+    <%= render 'question', {:question => question} %>
+  <% end %>
+</div>
+<p class="back-link"><%= link_to "Back to Problem Set Menu",categories_path %><p>
+

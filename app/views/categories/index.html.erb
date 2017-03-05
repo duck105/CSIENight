@@ -1,0 +1,16 @@
+<div class="header">
+  <h1>Problem Set</h1>
+  <% flash.each do |name,msg|%>
+    <h2><%= msg %></h2>
+  <% end %>
+</div>
+<div class="content">
+  <% @categories.each do |c| %>
+    <%= link_to category_path(c) do %>
+      <div class="Set-div"><%= c.name %></div>
+    <% end %>
+  <% end %>
+  <%= link_to tokens_path do %>
+      <div class="Set-div">Token</div>
+    <% end %>
+</div>

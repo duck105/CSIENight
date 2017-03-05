@@ -1,0 +1,10 @@
+<div id = "posts">
+  <% @questions.each do |q| %>
+    <div class="post_wrap">
+    <h2 class="title"><%= link_to q.title, question_path(q)%></h2>
+    <div class="date"><%= q.created_at.strftime("%B, %d, %Y") %>
+  </div>
+  <% end %>
+</div>
+
+<br><br>

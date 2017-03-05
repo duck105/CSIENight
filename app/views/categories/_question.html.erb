@@ -1,0 +1,11 @@
+<%= link_to question_path(question) do %>
+  <div class="Set-div">
+    <% if new_or_not(question) <= 3 %>
+      <%= image_tag("new.png", id: "new") %>
+    <% else %>
+      <div style="height: 100%; width: 54.5px; float: left;"></div>
+    <% end %>
+    <span><%= question.title %></span>
+    <%= question_check_mark(question) %>
+  </div>
+<% end %>

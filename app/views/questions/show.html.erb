@@ -1,0 +1,46 @@
+<div id="main">
+   <div class="header" >
+    <h1>Problem</h1>
+    <% flash.each do |name,msg|%>
+      <h2><%= msg %></h2>
+    <% end %>
+   </div>
+   <div class="content">
+    <h1 class="question-title"><%= @question.title %></h1>
+    
+    <div class="problem_description">
+      <div class="img-align-right">
+        <%= image_tag(@question.image_url.to_s) %>
+      </div>
+      <h2 class="content-subhead">Problem Description</h2>
+      <p>
+        <%= @question.spec %>
+      </p>
+    </div>
+
+    <div class="problem-score">
+      <h2 class="content-subhead">Problem Score</h2>
+      <p class="problem-score-correct">Correct : + <%= @question.rewardpoint %> pts</p>
+      <p class="problem-score-incorrect">Incorrect : <%= @question.punishpoint %> pts</p>
+    </div>
+    
+    <% if user_signed_in? %>
+      <h2 class="content-subhead">Fill in Your Answer :</h2>
+      <% if @question.options.count != 0%>
+        <%= render "submissions/choice" %>
+        <br>
+      <% elsif @question.spec.empty? %>
+        <%= render "submissions/yesno" %>
+      <% else %>
+        <%= render 'submissions/form' %>
+      <% end %>
+    <% elsif %>
+      <h2 class="content-subhead">Please Sign in to Answer it!!</h2>
+    <% end %>
+
+    
+    <p class="back-link"><%= link_to "Back to Problem Set",category_path(@question.category) %><p>
+</div>
+
+
+

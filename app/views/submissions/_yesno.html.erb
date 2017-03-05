@@ -1,0 +1,9 @@
+<%= form_for([@question, @submission]) do |f| %>
+  <%= f.radio_button :answer, "Yes" , :class => "problem-radio", required: "required"%>
+  <%= f.label :answer, "Yes" %>   
+  <%= f.radio_button :answer, "No" , :class => "problem-radio", required: "required"%>
+  <%= f.label :answer, "No" %>  
+  <br>
+  <%= f.submit "Submit", :class => "submit-button" %>
+  <br>
+<% end %>

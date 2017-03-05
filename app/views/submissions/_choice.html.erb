@@ -1,0 +1,10 @@
+<%= form_for([@question, @submission]) do |f| %>
+  <% @question.options.each_with_index do |option, i|  %>
+    <%= f.radio_button :answer, i+1 , class: "problem-radio", required: "required" %>
+    <%= f.label :answer, "#{i+1}. #{option.body}" %>
+    <br> 
+  <% end %>
+  <br>
+  <%= f.submit "Submit", :class => "submit-button" %>
+  <br>
+<% end %>

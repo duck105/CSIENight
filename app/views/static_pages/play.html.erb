@@ -1,0 +1,54 @@
+<div id="main">
+    <div class="header">
+      <h1>How to Play</h1>
+      <h2>Directions for playing the game</h2>
+      <% flash.each do |name,msg|%>
+        <h2><%= msg %></h2>
+      <% end %>
+    </div>
+
+    <div class="content">
+      <h2 class="content-subhead"></h2>
+      <p>
+      </p>
+    </div>
+    
+    <div class="content">
+      <h2>Rules:</h2>
+      <p>Answer the questions correctly as many as you can.</p>
+    </div>
+
+    <div class="content">
+      <h2>FAQ</h2>
+      <dl>
+        <dt class="question">Q1</dt>
+        <dd class="question">這網站是在幹麻？怎麼感覺跟資訊系大一必修的某網站長的87%像啊？</dd>
+        <dt class="answer">A2</dt>
+        <dd class="answer">這是2017資訊之夜的活動之一喔。只要想辦法答題得分就有機會獲得精美禮物喔！</dd>
+        <dt class="question">Q2</dt>
+        <dd class="question">要怎麼樣才能玩啊？活動期間到什麼時候呢？</dd>
+        <dt class="answer">A2</dt>
+        <dd class="answer"><dd class="answer">活動期間從即日起到3/29日11:59PM。在這段期間只要使用你的Facebook帳號登入，就能夠開始答題並累計分數了。
+        到時候會統計出這段期間得分數最高的幾位給予禮物喔！</dd>
+        <dt class="question">Q3</dt>
+        <dd class="question">答題的有什麼要注意的地方嘛？</dd>
+        <dt class="answer">A3</dt>
+        <dd class="answer">每一題會有一點倒扣的分數喔～請勿胡亂猜測答案喔！答案都可以在活動的相關宣傳或身活周遭找得到～</dd>
+        <dt class="question">Q4</dt>
+        <dd class="question">有沒有什麼bonus分數可以拿啊？</dd>
+        <dt class="answer">A4</dt>
+        <dd class="answer">有的～在Problem Set中可以找到token的頁面。如果你能找到隱藏在各地的token並輸入正確的話，就可以獲得額外的獎勵分數喔。請放心，輸入錯誤的token並不會倒扣任何的分數！</dd>
+        <dt class="question">Q5</dt>
+        <dd class="question">我要如何能看到我的分數呢？</dd>
+        <dt class="answer">A5</dt>
+        <dd class="answer">點進側邊欄中的Profile，就可以看到你的分數及答題狀況摟。在Rank頁面中也可以看到目前大家分數的排行喔！</dd>
+        <br><br>
+        <dd class="answer", style="color:#ff2f2f">請注意！！請勿有任何想攻擊網站或有損遊戲平衡的舉動。否則該使用者會以除名處理，且主辦單位將不排除採取法律行動。</dd>
+      </dl>
+    </div>
+
+    <div class="content">
+      <h2 class="content-emphasize">Wanna play a game?</h2>
+    </div>    
+</div>
+<%= render 'layouts/footer' %>

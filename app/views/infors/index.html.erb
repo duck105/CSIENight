@@ -1,0 +1,29 @@
+<div id="main">
+
+    <div class="header">
+      <h1>Night Of CSIE 2017 :: Activity</h1>
+      <% flash.each do |name,msg|%>
+        <h2><%= msg %></h2>
+      <% end %>
+    </div>
+
+    <div class="content">
+      <h2 class="content-subhead">As a activity of "<a href = "https://nightweb.csie.org">Night of CSIE 2017</a>"</h2>
+      <p>
+        Answering questions about Night of CSIE 2017, earning points, and chance to win!
+      </p>
+    </div>
+
+    <div class="header" >
+        <h1 >Latest News</h1>
+    </div>
+
+    <% @infors.each do |infor| %>
+      <div class="content">
+        <h2 class="content-subhead"><%= infor.title %></h2>
+        <p class="time"><%= infor.created_at.strftime("%B, %d, %Y") %></p>
+        <p><%= simple_format(infor.body) %></p>
+      </div>
+    <% end %>
+
+</div>
