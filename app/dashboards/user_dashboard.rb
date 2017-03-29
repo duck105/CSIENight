@@ -27,7 +27,8 @@ class UserDashboard < Administrate::BaseDashboard
     score: Field::Number,
     provider: Field::String,
     uid: Field::String,
-    is_admin: Field::Boolean
+    is_admin: Field::Boolean,
+    token_judges: Field::HasMany,
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -38,7 +39,7 @@ class UserDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = [
     :name,
     :submissions,
-    :judges,
+    :score,
     :id,
     :email,
   ].freeze
@@ -62,6 +63,7 @@ class UserDashboard < Administrate::BaseDashboard
     :uid,
     :submissions,
     :judges,
+    :token_judges,
     :encrypted_password,
     :reset_password_token,
     :reset_password_sent_at,
@@ -74,6 +76,7 @@ class UserDashboard < Administrate::BaseDashboard
   FORM_ATTRIBUTES = [
     :submissions,
     :judges,
+    :token_judges,
     :name,
     :email,
     :sign_in_count,

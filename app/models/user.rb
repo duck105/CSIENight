@@ -7,6 +7,7 @@ class User < ApplicationRecord
 
   has_many :submissions, dependent: :destroy
   has_many :judges, dependent: :destroy
+  has_many :token_judges, dependent: :destroy
 
   mount_uploader :avatar, AvatarUploader
 
@@ -45,5 +46,9 @@ class User < ApplicationRecord
         return (i+1)
       end
     end
+  end
+
+  def email_required?
+    false
   end
 end
